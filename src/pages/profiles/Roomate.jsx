@@ -6,6 +6,24 @@ import img from "../pictures/prof.png";
 import axios from "axios";
 
 const Roommatte = () => {
+  const [photoUrl, setPhotoUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPhotoUrl = async () => {
+      try {
+        const response = await axios.get("http://example.com/api/photo");
+        setPhotoUrl(response.data.photoUrl);
+        setIsLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setIsLoading(false);
+      }
+    };
+
+    fetchPhotoUrl();
+  }, []);
   const [roommateData, setRoommateData] = useState({
     name: "",
     gender: "",
@@ -28,8 +46,14 @@ const Roommatte = () => {
 
   return (
     <>
-      <div className={styles["photoo"]}>
-        <img alt="" src={img} />
+      <div>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error: {error}</p>
+        ) : (
+          <Photos photoUrl={photoUrl} altText="Description of the photo" />
+        )}
       </div>
       <div>
         <div className={styles["form"]}>

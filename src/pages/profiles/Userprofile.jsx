@@ -7,6 +7,24 @@ import LogoutButton from "../../componets/logoutbutton/LogoutButton.jsx";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const Userform = () => {
+  const [photoUrl, setPhotoUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPhotoUrl = async () => {
+      try {
+        const response = await axios.get("http://example.com/api/photo");
+        setPhotoUrl(response.data.photoUrl);
+        setIsLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setIsLoading(false);
+      }
+    };
+
+    fetchPhotoUrl();
+  }, []);
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -37,7 +55,15 @@ const Userform = () => {
       </div>
 
       <div>
-        <Photos />
+        <div>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            <Photos photoUrl={photoUrl} altText="Description of the photo" />
+          )}
+        </div>
         <div className={styles["form"]}>
           <span className={styles["userprofile"]}>User Profile</span>
 

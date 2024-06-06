@@ -8,6 +8,24 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Ownerform = () => {
+  const [photoUrl, setPhotoUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPhotoUrl = async () => {
+      try {
+        const response = await axios.get("http://example.com/api/photo");
+        setPhotoUrl(response.data.photoUrl);
+        setIsLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setIsLoading(false);
+      }
+    };
+
+    fetchPhotoUrl();
+  }, []);
   const [ownerData, setOwnerData] = useState({
     name: "",
     email: "",
@@ -29,7 +47,15 @@ const Ownerform = () => {
   return (
     <div>
       <div>
-        <Photos />
+        <div>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            <Photos photoUrl={photoUrl} altText="Description of the photo" />
+          )}
+        </div>
 
         <Link to="/upload">
           <button

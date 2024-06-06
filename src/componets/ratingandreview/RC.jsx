@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./rc.module.css"; // Import CSS file for styling
 import img8 from "../pictures/user1.png";
+import axios from "axios";
 
 function StarRating() {
   const [rating, setRating] = useState(0);
@@ -15,18 +16,36 @@ function StarRating() {
     setComment(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (comment.trim() !== "") {
-      setComments([...comments, comment]);
-      setComment("");
+      try {
+        await axios.post("http://localhost:8000/api/comments", {
+          rating,
+          comment,
+        });
+        setComment("");
+        setRating(0);
+        fetchComments();
+      } catch (error) {
+        console.error("Error submitting comment:", error);
+      }
     }
-    setRating(false);
-    // Here you can submit the rating and comment to your backend or perform any other action
-    console.log("Rating:", rating);
-    console.log("Comment:", comment);
   };
+
+  const fetchComments = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/api/comments");
+      setComments(response.data);
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
 
   return (
     <div>
@@ -49,7 +68,6 @@ function StarRating() {
           </div>
           <div>
             <label className={styles.Ratin}>Rating:</label>
-
             <span className={styles.Ratinn}>{rating}</span>
           </div>
 
@@ -73,7 +91,7 @@ function StarRating() {
 
       <div>
         <ul className={styles.img}>
-          {comments.map((index) => (
+          {comments.map((comment, index) => (
             <img
               key={index}
               src={img8}
@@ -86,9 +104,9 @@ function StarRating() {
         <ul className={styles.comment}>
           {comments.map((comment, index) => (
             <li key={index} className={styles.commentt}>
-              <p className={styles.p}>{comment}</p>
+              <p className={styles.p}>{comment.comment}</p>
               <span className={styles.span}>
-                03 Jan 2022 rented it for 3 mon
+                {new Date(comment.createdAt).toLocaleDateString()}
               </span>
             </li>
           ))}
