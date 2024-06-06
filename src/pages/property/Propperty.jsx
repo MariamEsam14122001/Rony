@@ -28,7 +28,7 @@ const PropertyDetails = (props) => {
   //   return <div>Loading...</div>;
   // }
 
-  //fetch data details
+  //third way
   //  const { id } = useParams();
   //  const [item, setItem] = useState(null);
 
