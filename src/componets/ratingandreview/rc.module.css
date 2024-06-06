@@ -1,0 +1,101 @@
+.starrating {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+}
+.img {
+  left: 5px;
+  position: absolute;
+  margin-top: auto;
+  top: 300px;
+}
+.photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 70%;
+  margin-right: 10px;
+  display: flex;
+  margin-top: 55px;
+  top: 5px;
+  left: -30px;
+}
+.comment {
+  left: 60px;
+  position: absolute;
+  width: auto;
+  margin-top: auto;
+  top: 300px;
+}
+.commentt {
+  margin-top: 40px;
+  padding: 5px;
+  background-color: rgb(172, 233, 252);
+  width: 400px;
+  height: 50px;
+  border-radius: 30px;
+
+  border-bottom-left-radius: 0;
+  border: solid;
+  border-color: rgba(172, 233, 252, 0.548);
+  font-style: italic;
+
+  left: 110px;
+}
+.p {
+  font-size: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: black;
+}
+.span {
+  font-size: 10px;
+  margin-top: 2px;
+  color: black;
+}
+.submit {
+  border-radius: 20px;
+  border-style: bold;
+  background-color: blue;
+  color: whitesmoke;
+  padding: 5px;
+  position: absolute;
+  left: 500px;
+  top: 200px;
+  font-size: large;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.Ratin {
+  color: rgb(9, 192, 248);
+  position: absolute;
+  left: 30px;
+  font-size: large;
+  font-weight: 600;
+}
+.Ratinn {
+  color: rgb(9, 192, 248);
+  position: absolute;
+  left: 100px;
+  font-size: large;
+  font-weight: 600;
+}
+.Review {
+  color: blue;
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  font-weight: 600;
+  font-size: large;
+}
+.text {
+  color: blue;
+  position: absolute;
+  top: 160px;
+  left: 30px;
+}

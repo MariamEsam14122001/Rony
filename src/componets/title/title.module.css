@@ -1,0 +1,18 @@
+.text {
+  top: 934px;
+  left: 564px;
+  color: rgb(22, 21, 21);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+
+  margin: 0 auto;
+  width: 80%;
+}

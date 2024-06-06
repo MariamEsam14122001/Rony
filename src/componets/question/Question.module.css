@@ -1,0 +1,44 @@
+.questionContainer {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  left: 250px;
+  position: relative;
+  top: 100px;
+  width: 1230px;
+  background-color: rgba(0, 191, 255, 0.356);
+}
+
+.question {
+  font-weight: bold;
+  color: darkblue;
+  background-image: url("../top.png");
+  background-position: left;
+  background-position-x: 10px;
+  background-size: 15px;
+  padding-left: 30px;
+  background-repeat: no-repeat;
+}
+
+.answer {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.showMoreButton {
+  margin-top: 10px;
+  background-image: url("../pictures/arrow.png");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  background-color: rgba(0, 191, 255, 0.151);
+
+  border-radius: 20px;
+  left: 1100px;
+  top: -10px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  height: 50px;
+}

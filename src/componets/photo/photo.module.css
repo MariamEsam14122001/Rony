@@ -1,0 +1,14 @@
+.photoo {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  position: absolute;
+  /* align-items: flex-start;*/
+  flex-shrink: 1;
+  left: 1110px;
+  top: 200px;
+  background-color: rgba(172, 233, 252, 0.548);
+  border-color: rgba(172, 233, 252, 0.548);
+  border-style: solid;
+  border-radius: 100px;
+}

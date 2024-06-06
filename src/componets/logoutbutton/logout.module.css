@@ -1,0 +1,27 @@
+.button{
+    width: 200px;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+    border-radius: 100px;
+    background-color: rgba(9, 192, 248, 0.507);
+}
+.logout{
+    top: 5px;
+  left: 15px;
+  color: black;
+  width: 168px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.orderlistcontainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.orderlisttable {
+  width: 60%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  left: 500px;
+  top: 100px;
+  position: absolute;
+}
+
+.orderlisttable th,
+.orderlisttable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.orderlisttable th {
+  background-color: #f2f2f2;
+}
+
+.orderlistimage {
+  width: 50px;
+  height: 50px;
+}
+
+.orderlistbutton {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.orderlistbutton:hover {
+  opacity: 0.8;
+}
+
+.orderlistbutton:focus {
+  outline: none;
+}
+
+.orderlistbuttonaccept {
+  background-color: #4caf50;
+  color: white;
+}
+
+.orderlistbuttondefuse {
+  background-color: #f44336;
+  color: white;
+}

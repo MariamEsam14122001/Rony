@@ -1,0 +1,195 @@
+.container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .component1 {
+    top: 61px;
+    left: 104px;
+    width: 740px;
+    height: 859px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: rgba(254, 153, 35, 1);
+    border-width: 1px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.9399999976158142);
+  }
+  .frameusersignup {
+    top: 67px;
+    left: 127px;
+    width: 464px;
+    height: 780px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .text {
+    color: rgba(255, 255, 255, 1);
+    width: 319px;
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .delails {
+    top: 76px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+ 
+  
+  .email-address {
+    top: 165px;
+    left: 2px;
+    color: rgba(255, 255, 255, 1);
+    width: 153px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+ 
+  .email {
+    top: 210px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  
+  .pass {
+    top: 280px;
+  color: rgba(255, 255, 255, 1);
+  width: 119px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none
+  }
+  
+  
+  .password {
+    top: 332px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+
+  .button {
+    top: 447px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(254, 153, 35, 1);
+  }
+  .login {
+    top: 5px;
+    left: 141px;
+    color: rgba(255, 255, 255, 1);
+    width: 168px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: SemiBold;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .do {
+    top: 500px;
+  left: 123px;
+  color: rgba(255, 255, 255, 1);
+  width: 148px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  }
+  .signup {
+    top: 500px;
+  left: 271px;
+  color: rgba(254, 153, 35, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+  }
+  
+  .home {
+    top: 550px;
+  left: 200px;
+  color: rgba(254, 153, 35, 1);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+  }
+  

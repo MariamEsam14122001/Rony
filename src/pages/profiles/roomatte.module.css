@@ -1,0 +1,222 @@
+.photoo {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  position: absolute;
+  /* align-items: flex-start;*/
+  flex-shrink: 1;
+  left: 700px;
+  top: 50px;
+  background-color: rgba(172, 233, 252, 0.548);
+  border-color: rgba(172, 233, 252, 0.548);
+  border-style: solid;
+  border-radius: 100px;
+}
+
+.form {
+  top: 250px;
+  left: 450px;
+  width: 740px;
+  height: 800px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(172, 233, 252, 0.548);
+  border-color: rgb(9, 192, 248);
+  border-style: solid;
+  border-radius: 100px;
+}
+.gender {
+  top: 330px;
+  left: 139px;
+  color: black;
+  width: 84px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.userprofile {
+  top: 150px;
+  left: 270px;
+  color: black;
+  width: 319px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.full-name {
+  top: 250px;
+  left: 139px;
+  width: 118px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.name {
+  color: black;
+  width: 118px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.city {
+  top: 490px;
+  left: 138px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.phone {
+  top: 570px;
+  left: 138px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.button {
+  top: 700px;
+  left: 260px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(9, 192, 248, 0.507);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.accountsetting {
+  top: 5px;
+  left: 20px;
+  color: black;
+  width: 168px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.nameinput {
+  top: 280px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.genderinput {
+  top: 360px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.age {
+  top: 410px;
+  left: 138px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.cityinput {
+  top: 520px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.ageinput {
+  top: 440px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.phoneinput {
+  top: 600px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}

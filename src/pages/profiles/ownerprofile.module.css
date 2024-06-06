@@ -1,0 +1,229 @@
+.form {
+  top: 200px;
+  left: 100px;
+  width: 700px;
+  height: 520px;
+  display: flex;
+  position: absolute;
+  border-radius: 100px;
+  border-style: solid;
+
+  flex-shrink: 1;
+  background-color: rgba(172, 233, 252, 0.548);
+  border-color: rgb(9, 192, 248);
+  border-style: solid;
+  border-radius: 100px;
+}
+
+.userprofile {
+  top: 67px;
+  left: 127px;
+  color: black;
+  width: 319px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.full-name {
+  top: 137px;
+  left: 139px;
+  width: 118px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.name {
+  color: black;
+  width: 118px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.email-address {
+  top: 218px;
+  left: 137.99966430664062px;
+  width: 153px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.email {
+  color: black;
+  width: 153px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.password {
+  top: 298px;
+  left: 138px;
+  width: 119px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.password1 {
+  color: black;
+  width: 119px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.button {
+  top: 400px;
+  left: 127px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 30px;
+  background-color: rgba(9, 192, 248, 0.507);
+  cursor: pointer;
+}
+.button2 {
+  cursor: pointer;
+  top: 500px;
+  left: 1075px;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-radius: 30px;
+  flex-shrink: 1;
+  background-color: rgba(9, 192, 248, 0.507);
+}
+
+.button3 {
+  cursor: pointer;
+  top: 550px;
+  left: 1075px;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  border-radius: 30px;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(9, 192, 248, 0.507);
+}
+
+.logout {
+  cursor: pointer;
+  top: 650px;
+  left: 1125px;
+  
+  display: flex;
+  position: absolute;
+  
+  align-items: flex-start;
+  flex-shrink: 1;
+ 
+}
+
+.accountsetting {
+  text-align: center;
+  color: black;
+  top: 5px;
+  left: 15px;
+  width: 168px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.acccountsetting {
+  text-align: center;
+  color: black;
+  top: 5px;
+  left: 70px;
+  width: 168px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.nameinput {
+  top: 167px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.emailinput {
+  top: 253px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.passwordinput {
+  top: 328px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}

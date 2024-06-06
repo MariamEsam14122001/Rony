@@ -1,0 +1,395 @@
+.container {
+    
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .component1 {
+    
+    top: 61px;
+    left: 104px;
+    width: 740px;
+    height: 900px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: rgba(254, 153, 35, 1);
+    border-width: 1px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.9399999976158142);
+  }
+  .frameusersignup {
+    top: 67px;
+    left: 127px;
+    width: 464px;
+    height: 780px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .text {
+    color: rgba(255, 255, 255, 1);
+  width: 319px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  }
+  .full-name {
+    top: 70px;
+    left: 12px;
+    width: 118px;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    color: rgba(255, 255, 255, 1);
+    width: 118px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+ 
+  .fullname {
+    top: 100px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .email-address {
+    top: 151px;
+    left: 10.9996337890625px;
+    width: 153px;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    color: rgba(255, 255, 255, 1);
+    width: 153px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+ 
+  .email {
+    top: 186px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  
+  .pass {
+    top: 231px;
+    left: 11px;
+    color: rgba(255, 255, 255, 1);
+    width: 119px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
+  
+  .password {
+    top: 261px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .pho {
+    top: 301px;
+    left: 12px;
+    color: rgba(255, 255, 255, 1);
+    width: 155px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .phon {
+    top: 331px;
+  left: 0px;
+  width: 221px;
+  height: 40px;
+  position: absolute;
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  }
+  .text14 {
+    top: 301px;
+    left: 255px;
+    color: rgba(255, 255, 255, 1);
+    width: 166px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .photo{
+    
+      top: 331px;
+      left: 243px;
+      width: 221px;
+      height: 40px;
+      position:absolute;
+      
+    
+  }
+  .gend {
+    top: 377px;
+    left: 12px;
+    color: rgba(255, 255, 255, 1);
+    width: 84px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .gender {
+    top: 407px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .ag {
+    top: 457px;
+    left: 11px;
+    color: rgba(255, 255, 255, 1);
+    width: 69px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .age {
+    top: 488px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .citee {
+    top: 534px;
+    left: 11px;
+    color: rgba(255, 255, 255, 1);
+    width: 69px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .city {
+    top: 563px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .stat {
+    top: 608px;
+    color: rgba(255, 255, 255, 1);
+    width: 155px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .status {
+    top: 638px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .where{
+    top: 685px;
+  color: rgba(255, 255, 255, 1);
+  width: 155px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  }
+
+  .wheretogo {
+    top: 711px;
+    left: 0px;
+    width: 464px;
+    height: 40px;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+  }
+
+  .button {
+    top: 761px;
+  left: 0px;
+  width: 464px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(254, 153, 35, 1)
+  }
+  .create-account {
+    top: 5px;
+    left: 141px;
+    color: rgba(255, 255, 255, 1);
+    width: 168px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: SemiBold;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .already {
+    top: 814px;
+  left: 101px;
+  color: rgba(255, 255, 255, 1);
+  width: 186px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  }
+  .login {
+    
+    top: 814px;
+    left: 298px;
+    color: rgba(254, 153, 35, 1);
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
+  

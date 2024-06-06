@@ -1,0 +1,43 @@
+/* Header Styles */
+header {
+  background-color: #51a4f1e8;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li a {
+  color: white;
+  margin-right: 50px;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.profile-icons {
+  margin-left: auto;
+}
+
+.profile-icons img {
+  width: 50px;
+  height: auto;
+  margin-left: 20px;
+}

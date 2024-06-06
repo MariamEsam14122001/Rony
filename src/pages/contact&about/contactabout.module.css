@@ -1,0 +1,455 @@
+.contact-page {
+  top: 0px;
+  left: 0px;
+  width: 1645px;
+  height: 1768px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: white;
+}
+
+.containerabout {
+  top: 130px;
+  left: 30px;
+  width: 802px;
+  height: 1400px;
+  position: absolute;
+  border-color: rgb(9, 192, 248);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 30px;
+}
+.log {
+  top: 55px;
+  left: 1040px;
+  width: 242px;
+  height: 53px;
+
+  position: absolute;
+  padding: 10px;
+  align-items: flex-start;
+
+  border-radius: 30px;
+  background-color: rgba(9, 192, 248, 0.24);
+  font-size: 16px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Lato;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+  cursor: pointer;
+}
+.sign {
+  top: 55px;
+  left: 1332px;
+  width: 242px;
+  height: 53px;
+
+  position: absolute;
+
+  align-items: flex-start;
+
+  border-radius: 30px;
+  background-color: rgba(9, 192, 248, 0.24);
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: SemiBold;
+  font-weight: 600;
+  cursor: pointer;
+}
+.trust {
+  color: black;
+  height: auto;
+  font-size: 24px;
+  font-style: SemiBold;
+  top: 1350px;
+  left: 50px;
+  position: absolute;
+  font-family: Source Serif Pro;
+  font-weight: 600;
+}
+.sec {
+  color: black;
+  width: 334px;
+  left: 50px;
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  top: 1400px;
+  position: absolute;
+  font-family: Source Serif Pro;
+}
+
+.tools {
+  color: black;
+  height: auto;
+  font-size: 24px;
+  font-style: SemiBold;
+  top: 1350px;
+  left: 500px;
+  position: absolute;
+  font-family: Source Serif Pro;
+  font-weight: 600;
+}
+.why {
+  color: black;
+  height: auto;
+  font-size: 24px;
+  font-style: SemiBold;
+  top: 1100px;
+  left: 300px;
+  position: absolute;
+  font-family: Source Serif Pro;
+  font-weight: 600;
+}
+.with {
+  color: black;
+  width: 334px;
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Lato;
+  top: 1400px;
+  left: 480px;
+  position: absolute;
+}
+
+.seemore {
+  height: auto;
+  top: 200px;
+  left: 60px;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  width: 700px;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  font-style: SemiBold;
+  font-family: Lato;
+  position: absolute;
+}
+
+.abouttext {
+  top: 150px;
+  color: black;
+  width: 346px;
+  left: 250px;
+  height: auto;
+  position: absolute;
+  font-size: 50px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+
+  border-style: groove;
+  border-color: rgba(9, 192, 248, 0.24);
+
+  border-left: none;
+  border-right: none;
+  text-decoration: none;
+}
+
+.deco {
+  position: absolute;
+
+  color: black;
+  height: auto;
+
+  font-size: 36px;
+  font-style: SemiBold;
+
+  font-family: Source Serif Pro;
+  font-weight: 600;
+  top: 800px;
+  left: 40px;
+  padding-bottom: 20px;
+  border-style: groove;
+  border-color: rgba(0, 255, 255, 0.267);
+  border-top: none;
+
+  border-left: none;
+  border-right: none;
+}
+.developing {
+  color: black;
+  width: 700px;
+  height: auto;
+  font-size: 24px;
+  font-style: Regular;
+  position: absolute;
+  top: 930px;
+  left: 80px;
+
+  font-family: Lato;
+  font-weight: 400;
+}
+
+.containercotact {
+  top: 130px;
+  left: 870px;
+  width: 770px;
+  height: 1400px;
+  position: absolute;
+  border-color: rgb(9, 192, 248);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 30px;
+}
+
+.thank {
+  top: 1150px;
+  left: 990px;
+  width: 484px;
+  height: 106px;
+  font-size: 16px;
+  font-style: oblique;
+  text-align: center;
+  font-family: Lato;
+  font-size: large;
+  font-weight: 600;
+  position: absolute;
+  color: rgb(9, 192, 248);
+  flex-shrink: 0;
+}
+
+.followus {
+  top: 1320px;
+  left: 1155px;
+  color: rgb(9, 192, 248);
+  width: 293px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.contactus {
+  top: 150px;
+  left: 1100px;
+  color: black;
+  width: 360px;
+  height: auto;
+  position: absolute;
+  font-size: 50px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+
+  border-style: groove;
+  border-color: rgba(9, 192, 248, 0.24);
+
+  border-left: none;
+  border-right: none;
+}
+
+.gmail {
+  top: 529px;
+  left: 949px;
+  color: rgba(84, 70, 70, 1);
+  width: 285px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+
+  font-style: Regular;
+  text-align: left;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.gover {
+  top: 504px;
+  left: 1319px;
+  color: black;
+  width: 285px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.num {
+  top: 830px;
+  left: 1070px;
+  color: black;
+  width: 477px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.name {
+  top: 960px;
+  left: 1011px;
+  color: black;
+  width: 477px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.phone {
+  top: 880px;
+  left: 1380px;
+  color: black;
+  width: 285px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.logo {
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  width: 200px;
+  height: 150px;
+}
+.about {
+  position: absolute;
+  top: 430px;
+  left: 330px;
+  width: 500px;
+  height: 400px;
+  border: 2px;
+  border-radius: 300px;
+  border-color: rgba(172, 233, 252, 0.199);
+  border-style: unset;
+  background-color: rgba(172, 233, 252, 0.199);
+}
+.icon {
+  position: absolute;
+  border: 10px;
+  top: 1230px;
+  left: 550px;
+  width: 200px;
+  height: 100px;
+  border-radius: 300px;
+  border-color: rgba(172, 233, 252, 0.199);
+  border-style: unset;
+  background-color: rgba(172, 233, 252, 0.199);
+}
+.iicon {
+  position: absolute;
+  border: 10px;
+  top: 1230px;
+  left: 100px;
+  width: 200px;
+  height: 100px;
+  border-radius: 300px;
+  border-color: rgba(172, 233, 252, 0.199);
+  border-style: unset;
+  background-color: rgba(172, 233, 252, 0.199);
+}
+.email {
+  position: absolute;
+  top: 320px;
+  left: 900px;
+  width: 200px;
+  height: 100px;
+  border: 80px;
+  border-radius: 100px;
+  border-color: rgba(172, 233, 252, 0.089);
+  border-style: solid;
+  background-color: rgba(172, 233, 252, 0.089);
+}
+
+.fax {
+  position: absolute;
+  border: 80px;
+  top: 640px;
+  left: 920px;
+  width: 200px;
+  height: 100px;
+  border-radius: 100px;
+  border-color: rgba(172, 233, 252, 0.089);
+  border-style: solid;
+  background-color: rgba(172, 233, 252, 0.089);
+}
+.location {
+  position: absolute;
+  border: 70px;
+  top: 320px;
+  left: 1270px;
+  width: 200px;
+  height: 120px;
+  border-radius: 100px;
+  border-color: rgba(172, 233, 252, 0.089);
+  border-style: solid;
+  background-color: rgba(172, 233, 252, 0.089);
+}
+.mobile {
+  position: absolute;
+  border: 60px;
+  top: 580px;
+  left: 1340px;
+  width: 100px;
+  height: 240px;
+  border-radius: 100px;
+  border-color: rgba(172, 233, 252, 0.089);
+  border-style: solid;
+  background-color: rgba(172, 233, 252, 0.089);
+}
+.link {
+  position: relative;
+  top: 900px;
+  left: 1000px;
+}
+.wavy {
+  width: 200px;
+  position: absolute;
+  top: 1140px;
+  left: 280px;
+
+  /*filter: blur(2px);*/
+  height: 40px;
+}

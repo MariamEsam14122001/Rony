@@ -1,0 +1,111 @@
+.managment {
+  width: 1275px;
+  height: 600px;
+  left: 400px;
+  position: absolute;
+  top: 70px;
+}
+
+.AccommodationList {
+  position: absolute;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  cursor: pointer;
+  background-color: rgba(9, 192, 248, 0.507);
+  border: none;
+  background-image: url("l.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: center;
+  padding-top: 120px;
+}
+.UserList {
+  position: absolute;
+  left: 300px;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  cursor: pointer;
+  background-color: rgba(9, 192, 248, 0.507);
+  border: none;
+  background-image: url("j.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: center;
+  padding-top: 120px;
+}
+.providerList {
+  position: absolute;
+  left: 550px;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  cursor: pointer;
+  background-color: rgba(9, 192, 248, 0.507);
+  border: none;
+  background-image: url("b.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: center;
+  padding-top: 120px;
+}
+.Adminstrators {
+  position: absolute;
+  left: 800px;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  background-image: url("e.png");
+  background-repeat: no-repeat;
+  background-color: rgba(9, 192, 248, 0.507);
+  background-size: auto;
+  background-position-x: center;
+}
+.Admin {
+  position: absolute;
+  left: 50px;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  top: 150px;
+  border: none;
+  background-color: rgb(8, 8, 122);
+  color: white;
+  cursor: pointer;
+  background-size: auto;
+  background-position-x: center;
+  /* color:rgb(8, 8, 122);*/
+}
+
+.Rental {
+  position: absolute;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  top: 270px;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(9, 192, 248, 0.507);
+  background-image: url("t.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: center;
+  padding-top: 120px;
+}
+.financialGrowth {
+  position: absolute;
+  left: 300px;
+  width: 200px;
+  height: 200px;
+  border: none;
+  top: 270px;
+  cursor: pointer;
+  background-color: rgba(9, 192, 248, 0.507);
+  background-image: url("r.png");
+  background-size: auto;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+}

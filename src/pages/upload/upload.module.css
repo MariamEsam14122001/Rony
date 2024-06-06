@@ -1,0 +1,382 @@
+.uploadform {
+  width: 733px;
+  height: 900px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(172, 233, 252, 0.548);
+  border: solid;
+  border-radius: 100px;
+  border-color: rgb(9, 192, 248);
+  top: 10px;
+  left: 50px;
+}
+.upload-your-image-text {
+  top: 35px;
+  left: 98px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 421px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.browse {
+  top: 90px;
+  left: 114px;
+  width: 475px;
+  height: 140px;
+
+  position: absolute;
+  align-self: stretch;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: rgba(128, 128, 128, 0.719);
+
+  border-width: 1px;
+  border-radius: 9px;
+}
+.browseimage {
+  top: 55px;
+  left: 110px;
+  width: 240px;
+  height: 20px;
+
+  position: absolute;
+}
+
+.text {
+  top: -55px;
+  left: -110px;
+  width: 367px;
+  height: 53px;
+  position: relative;
+
+  cursor: pointer;
+
+  padding-top: 80px;
+  padding-left: 100px;
+  background-image: url("./browse.png");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.text04 {
+  top: 60px;
+  left: 13px;
+  color: rgba(149, 157, 177, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 800;
+  line-height: 150%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.specstext {
+  top: 300px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.appartmentspecsinput {
+  top: 330px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.addresstext {
+  top: 370px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.appartmentaddressinput {
+  top: 400px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.locationtext {
+  top: 440px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.locationinput {
+  top: 470px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.regiontext {
+  top: 570px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.regioninput {
+  top: 600px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.rentaltext {
+  top: 630px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.rentalpriceinput {
+  top: 660px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.phonenumberinput {
+  top: 730px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 6px;
+}
+.city {
+  top: 530px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+
+  border-radius: 6px;
+}
+
+.governoratetext {
+  top: 500px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.phonetext {
+  top: 700px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 345px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.ortext {
+  top: 770px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 300px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.sharedradio {
+  top: 800px;
+  left: 110px;
+  width: 27px;
+  height: 20px;
+  position: absolute;
+
+  border-color: rgba(241, 241, 241, 1);
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+}
+.sharedtext {
+  top: 800px;
+  left: 146px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.invidualradio {
+  top: 800px;
+  left: 400px;
+  width: 27px;
+  height: 20px;
+  position: absolute;
+
+  border-color: rgba(241, 241, 241, 1);
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+}
+.invidualtext {
+  top: 800px;
+  left: 436px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.donebutton {
+  top: 834px;
+  left: 117px;
+  width: 464px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(9, 192, 248, 0.507);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.text12 {
+  top: 5px;
+  left: 141px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 168px;
+  height: auto;
+  position: relative;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

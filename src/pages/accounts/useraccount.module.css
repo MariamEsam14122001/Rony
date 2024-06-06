@@ -1,0 +1,325 @@
+.form {
+  top: 30px;
+  left: 80px;
+  width: 740px;
+  height: 859px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(172, 233, 252, 0.548);
+  border-radius: 100px;
+  border-color: rgb(9, 192, 248);
+  border-style: solid;
+}
+.gender {
+  top: 444px;
+  left: 139px;
+  color: black;
+  width: 84px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.statusinput {
+  top: 398px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.userprofile {
+  top: 67px;
+  left: 127px;
+  color: black;
+  width: 319px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.full-name {
+  top: 137px;
+  left: 139px;
+  width: 118px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.name {
+  color: black;
+  width: 118px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.email-address {
+  top: 218px;
+  left: 137.99966430664062px;
+  width: 153px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.email {
+  color: black;
+  width: 153px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.password {
+  top: 298px;
+  left: 138px;
+  width: 119px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.password1 {
+  color: black;
+  width: 119px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.status {
+  top: 370px;
+  left: 140px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.city {
+  top: 660px;
+  left: 210px;
+  width: 464px;
+  height: 40px;
+  position: relative;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.citytext {
+  top: 635px;
+  left: 220px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.phone {
+  top: 680px;
+  left: 138px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.button {
+  top: 781px;
+  left: 127px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(9, 192, 248, 0.507);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.accountsetting {
+  top: 5px;
+  left: 20px;
+  color: black;
+  width: 168px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.nameinput {
+  top: 167px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.emailinput {
+  top: 253px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.genderinput {
+  top: 474px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.age {
+  top: 524px;
+  left: 138px;
+  color: black;
+  width: 69px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.passwordinput {
+  top: 328px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.ageinput {
+  top: 555px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.phoneinput {
+  top: 705px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+.upload-container {
+  position: relative;
+}
+
+.browse-button {
+  color: rgba(172, 233, 252, 0.548);
+
+  text-align: center;
+  cursor: pointer;
+  top: 400px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 20px;
+  position: absolute;
+  width: 300px;
+  height: 30px;
+  left: 1070px;
+  font-size: 20px;
+  color: black;
+  background-color: rgba(9, 192, 248, 0.507);
+}
