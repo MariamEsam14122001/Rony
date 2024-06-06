@@ -1,3 +1,4 @@
+// src/pages/logout/Logout.jsx
 import React from "react";
 import axios from "axios";
 import styles from "./logout.module.css";
@@ -11,17 +12,15 @@ const handleLogout = async (dispatch) => {
       {},
       {
         headers: {
-          Authorization: sessionStorage.getItem("authToken"),
+          Authorization: `Bearer ${sessionStorage.getItem("authToken")}`,
         },
       }
     );
-    // Clear tokens from sessionStorage
     sessionStorage.removeItem("authToken");
     sessionStorage.removeItem("userRole");
 
-    dispatch(logout()); // Dispatch the logout action to Redux
+    dispatch(logout());
 
-    // Redirect to the home page
     window.location.href = "/";
   } catch (error) {
     console.error("There was an error logging out!", error);
@@ -29,17 +28,12 @@ const handleLogout = async (dispatch) => {
 };
 
 const LogoutButton = () => {
-  const dispatch = useDispatch(); // Initialize the dispatch function
+  const dispatch = useDispatch();
 
   return (
-    <>
-      <button
-        className={styles["button"]}
-        onClick={() => handleLogout(dispatch)}
-      >
-        <span className={styles["logout"]}>Logout</span>
-      </button>
-    </>
+    <button className={styles["button"]} onClick={() => handleLogout(dispatch)}>
+      <span className={styles["logout"]}>Logout</span>
+    </button>
   );
 };
 

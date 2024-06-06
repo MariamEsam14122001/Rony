@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setAuthToken, setUserRole } from "./redux/authSlice";
-import Home from "./pages/home/Home.jsx";
 import { useNavigate } from "react-router-dom";
+import Home from "./pages/home/Home.jsx";
 
 function App() {
   const dispatch = useDispatch();

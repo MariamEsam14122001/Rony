@@ -1,3 +1,4 @@
+// src/redux/store.jsx
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice";
 

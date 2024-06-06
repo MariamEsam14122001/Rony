@@ -1,12 +1,12 @@
+// src/pages/signup/Signup.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import Welcome from "../../componets/welcome/Welcome";
 import styles from "./signup.module.css";
 import img from "../pictures/logsign.png";
-import { Link } from "react-router-dom";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setAuthToken } from "../../redux/authSlice";
+import { setAuthToken, setUserRole } from "../../redux/authSlice";
 
 const Signup = () => {
   const cities = [
@@ -59,7 +59,6 @@ const Signup = () => {
   ];
 
   const where_to_go = ["Alexandria", "Cairo", "Aswan"];
-
   const status = ["shared", "single"];
   const { userType } = useParams();
   const navigate = useNavigate();
@@ -92,19 +91,20 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register", {
+      const response = await axios.post("http://localhost:8000/api/register", {
         ...formData,
         user_type: userType,
       });
       sessionStorage.setItem("authToken", response.data.token);
-      sessionStorage.setItem("userRole", getRoleFromEmail(formData.email)); // Store user role based on email
-      dispatch(setAuthToken(response.data.token)); // Dispatch the token to Redux
+      sessionStorage.setItem("userRole", getRoleFromEmail(formData.email));
+      dispatch(setAuthToken(response.data.token));
+      dispatch(setUserRole(getRoleFromEmail(formData.email)));
       console.log("Signup successful:", response.data);
 
       navigateToRolePage(getRoleFromEmail(formData.email));
     } catch (error) {
       console.error("Signup failed:", error);
-      // Handle signup failure
+      setError("Signup failed. Please try again.");
     }
   };
 
@@ -170,7 +170,6 @@ const Signup = () => {
               value={formData.password}
               onChange={handleChange}
             />
-
             <span className={styles["pho"]}>
               <span>Phone number</span>
             </span>
@@ -277,7 +276,7 @@ const Signup = () => {
               <span className={styles["already"]}>
                 Already have an account?
               </span>
-              <Link to="/Login" className={styles["login"]}>
+              <Link to="/login" className={styles["login"]}>
                 Login
               </Link>
             </div>
