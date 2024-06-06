@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import styles from "./rent.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import axios from "axios";
 
 function WhatsAppButton() {
   const [showPopup, setShowPopup] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [referenceNumber, setReferenceNumber] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   const handleButtonClick = () => {
     setShowPopup(true);
@@ -14,16 +18,45 @@ function WhatsAppButton() {
     setShowPopup(false);
   };
 
-  const [selectedFile, setSelectedFile] = useState(null);
-
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
 
+  const handleReferenceNumberChange = (event) => {
+    setReferenceNumber(event.target.value);
+  };
+
+  const handleEndDateChange = (event) => {
+    setEndDate(event.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+    formData.append("referenceNumber", referenceNumber);
+    formData.append("endDate", endDate);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Form submitted successfully:", response.data);
+    } catch (error) {
+      console.error("Form submission failed:", error);
+    }
+
+    handleClosePopup();
   };
+
   const iiiiconStyle = {
     marginRight: "80px",
     color: "#25D366",
@@ -32,6 +65,7 @@ function WhatsAppButton() {
     top: "60px",
     left: "300px",
   };
+
   return (
     <div>
       <button className={styles.rent} onClick={handleButtonClick}>
@@ -52,7 +86,6 @@ function WhatsAppButton() {
               &times;
             </span>
             <span className={styles.img}>Image :</span>
-
             <div className={styles.browseimage}>
               <div>
                 <input
@@ -60,19 +93,24 @@ function WhatsAppButton() {
                   type="file"
                   onChange={handleFileChange}
                 />
-
-                {selectedFile && <p></p>}
+                {selectedFile && <p>{selectedFile.name}</p>}
               </div>
             </div>
             <span className={styles.ReferenceNumber}>Reference Number :</span>
             <input
               className={styles.Enterreferencenumber}
-              placeholder=" Enter reference number"
-            ></input>
+              placeholder="Enter reference number"
+              value={referenceNumber}
+              onChange={handleReferenceNumberChange}
+            />
             <span className={styles.EndDate}>End Date :</span>
-            <input type="Date" className={styles.dateinput}></input>
-
-            <button type="submit">submit</button>
+            <input
+              type="date"
+              className={styles.dateinput}
+              value={endDate}
+              onChange={handleEndDateChange}
+            />
+            <button type="submit">Submit</button>
           </div>
         </form>
       )}

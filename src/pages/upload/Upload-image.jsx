@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-
 import PropTypes from "prop-types";
-
 import styles from "./upload.module.css";
-
 import home from "../pictures/up.png";
 import Welcome from "../../componets/welcome/Welcome";
 import axios from "axios";
 
-const Uploadform = (props) => {
+const Uploadform = () => {
   const cities = [
     "Alexandria",
     "Aswan",
@@ -44,19 +41,19 @@ const Uploadform = (props) => {
   };
 
   const [formData, setFormData] = useState({
-    images: "",
     description: "",
     address: "",
     location_link: "",
-    /*cities: "",*/
     region: "",
     price: "",
     facilities: "",
     shared: "",
-    indvidual: "",
-    selectedCity: "",
+    individual: "",
     image: "",
+    selectedCity: "",
   });
+
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,13 +61,7 @@ const Uploadform = (props) => {
       ...formData,
       [name]: value,
     });
-    setSelectedCity(e.target.value);
   };
-  const handlleChange = (el) => {
-    setSelectedCity(el.target.value);
-  };
-
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -80,14 +71,32 @@ const Uploadform = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const data = new FormData();
+    data.append("description", formData.description);
+    data.append("address", formData.address);
+    data.append("location_link", formData.location_link);
+    data.append("region", formData.region);
+    data.append("price", formData.price);
+    data.append("facilities", formData.facilities);
+    data.append("shared_or_individual", formData.shared_or_individual);
+    data.append("city", selectedCity);
+    if (selectedFile) {
+      data.append("image", selectedFile);
+    }
+
     try {
-      const response = await axios.post("http://localhost:8000/api/register", {
-        ...formData,
-      });
-      console.log("upload image successful:", response.data);
+      const response = await axios.post(
+        "http://localhost:8000/api/upload",
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Upload successful:", response.data);
     } catch (error) {
-      console.error("upload image failed:", error);
-      return <h1>upload image failed: {error}</h1>;
+      console.error("Upload failed:", error);
     }
   };
 
@@ -141,7 +150,6 @@ const Uploadform = (props) => {
         />
 
         <span className={styles["rentaltext"]}>Rental Price</span>
-
         <input
           onChange={handleChange}
           name="price"
@@ -151,7 +159,7 @@ const Uploadform = (props) => {
           className={styles["rentalpriceinput"]}
         />
 
-        <span className={styles["phonetext"]}>facilities</span>
+        <span className={styles["phonetext"]}>Facilities</span>
         <input
           onChange={handleChange}
           name="facilities"
@@ -168,27 +176,23 @@ const Uploadform = (props) => {
         <input
           onChange={handleChange}
           value={formData.shared}
-          id="shared_or_indvidual"
+          id="shared"
           type="radio"
-          name="shared_or_indvidual"
+          name="shared_or_individual"
           className={styles["sharedradio"]}
         />
         <span className={styles["sharedtext"]}>Shared</span>
         <input
           onChange={handleChange}
-          value={formData.indvidual}
-          id="shared_or_indvidual"
+          value={formData.individual}
+          id="individual"
           type="radio"
-          name="shared_or_indvidual"
+          name="shared_or_individual"
           className={styles["invidualradio"]}
         />
         <span className={styles["invidualtext"]}>Individual</span>
-        <button type="submit" className={styles["donebutton"]}>
-          <span className={styles["text12"]}>Done</span>
-        </button>
 
-        <span className={styles["governoratetext"]}> Governarate</span>
-
+        <span className={styles["governoratetext"]}> Governorate</span>
         <div>
           <input
             placeholder="select city"
@@ -197,7 +201,7 @@ const Uploadform = (props) => {
             list="cities"
             name="cities"
             value={selectedCity}
-            onChange={handlleChange}
+            onChange={handleChange}
           />
           <datalist id="cities">
             {cities.map((city) => (
@@ -209,6 +213,7 @@ const Uploadform = (props) => {
             ))}
           </datalist>
         </div>
+
         <div className={styles["browse"]}>
           <div className={styles["browseimage"]}>
             <div>
@@ -216,16 +221,19 @@ const Uploadform = (props) => {
                 className={styles["text"]}
                 type="file"
                 onChange={handleFileChange}
-                value={image}
+                value={formData.image}
               />
-
-              {selectedFile && <p></p>}
+              {selectedFile && <p>Selected file: {selectedFile.name}</p>}
             </div>
             <span className={styles["text04"]}>
               Supports: PNG, JPG, JPEG, WEBP
             </span>
           </div>
         </div>
+
+        <button type="submit" className={styles["donebutton"]}>
+          <span className={styles["text12"]}>Done</span>
+        </button>
       </form>
     </>
   );

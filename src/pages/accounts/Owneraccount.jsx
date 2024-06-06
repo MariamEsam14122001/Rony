@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-
 import styles from "./owneraccount.module.css";
 import Photos from "../../componets/photo/Photo";
 import img from "../pictures/prof.png";
-
 import axios from "axios";
 
 const Ownform = (props) => {
-  const fileInputRef = useState(null);
+  const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => {
     fileInputRef.current.click();
@@ -19,29 +16,50 @@ const Ownform = (props) => {
     nameinput: "",
     emailinput: "",
     passwordinput: "",
-    imageinput: "",
+    imageinput: null, // Change to null to handle files
     setting: "",
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, files } = e.target;
+    if (name === "imageinput" && files.length > 0) {
+      setFormData({
+        ...formData,
+        [name]: files[0], // Set the file object
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const formDataToSend = new FormData();
+    formDataToSend.append("nameinput", formData.nameinput);
+    formDataToSend.append("emailinput", formData.emailinput);
+    formDataToSend.append("passwordinput", formData.passwordinput);
+    if (formData.imageinput) {
+      formDataToSend.append("imageinput", formData.imageinput);
+    }
+    formDataToSend.append("setting", formData.setting);
+
     try {
-      const response = await axios.post("http://localhost:8000/api/register", {
-        ...formData,
-      });
-      console.log("changing data successfull:", response.data);
+      const response = await axios.post(
+        "http://localhost:8000/api/register",
+        formDataToSend,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Changing data successful:", response.data);
     } catch (error) {
-      console.error("changing data failed:", error);
-      return <h1>changing data failed: {error}</h1>;
+      console.error("Changing data failed:", error);
     }
   };
 
@@ -86,7 +104,7 @@ const Ownform = (props) => {
             name="passwordinput"
             value={formData.passwordinput}
             id="passwordinput"
-            type="text"
+            type="password"
             className={styles["passwordinput"]}
           />
 
@@ -102,11 +120,11 @@ const Ownform = (props) => {
         </div>
         <div className={styles["upload-container"]}>
           <div className={styles["browse-button"]} onClick={handleBrowseClick}>
-            change
+            Change
           </div>
           <input
             ref={fileInputRef}
-            value={formData.imageinput}
+            name="imageinput"
             type="file"
             style={{ display: "none" }}
             onChange={handleChange}
@@ -116,6 +134,7 @@ const Ownform = (props) => {
     </>
   );
 };
+
 Photos.defaultProps = {
   iMAGESrc: img,
   iMAGEAlt: "IMAGE",
@@ -125,4 +144,5 @@ Photos.propTypes = {
   iMAGESrc: PropTypes.string,
   iMAGEAlt: PropTypes.string,
 };
+
 export default Ownform;
