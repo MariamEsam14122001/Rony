@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./property.module.css";
 import img6 from "../pictures/location.png";
 import img7 from "../pictures/provide.png";
-import HeartButton from "../componets/Heart.jsx";
+import HeartButton from "../../componets/heart/Heart.jsx";
 import VRList from "../../componets/vr/VRList.jsx";
 import ImagesList from "../../componets/vr/ImagesList.jsx";
 import img1 from "../pictures/line.png";

@@ -105,7 +105,7 @@ function Login() {
             </button>
             <div>
               <span className={styles["do"]}>Do not have an account?</span>
-              <Link to="/signup/user" className={styles["signup"]}>
+              <Link to="/Getstarted" className={styles["signup"]}>
                 Signup
               </Link>
             </div>

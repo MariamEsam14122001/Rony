@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import styles from "./upload.module.css";
 import home from "../pictures/up.png";
-import Welcome from "../../components/welcome/Welcome";
+import Welcome from "../../componets/welcome/Welcome";
 
 const OwnersEdit = () => {
   const { id } = useParams();
