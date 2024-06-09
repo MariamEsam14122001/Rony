@@ -5,7 +5,7 @@ import Photos from "../../componets/photo/Photo"; // Ensure the correct path
 import img from "../pictures/prof.png";
 import axios from "axios";
 
-const Userform = () => {
+const Useform = () => {
   const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => {
@@ -43,9 +43,7 @@ const Userform = () => {
   ];
 
   const [selectedCity, setSelectedCity] = useState("");
-  const handleSelect = (city) => {
-    setSelectedCity(city);
-  };
+
   const [formData, setFormData] = useState({
     nameinput: "",
     emailinput: "",
@@ -55,8 +53,8 @@ const Userform = () => {
     ageinput: "",
     imageinput: null, // null initially for file
     phoneinput: "",
-    selectedCity: "",
     setting: "",
+    city: "",
   });
 
   const handleChange = (e) => {
@@ -65,6 +63,10 @@ const Userform = () => {
       ...formData,
       [name]: files ? files[0] : value, // Handle file input
     });
+
+    if (name === "selectedCity") {
+      setSelectedCity(value);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -85,9 +87,9 @@ const Userform = () => {
           },
         }
       );
-      console.log("Upload successful:", response.data);
+      console.log(" successful:", response.data);
     } catch (error) {
-      console.error("Upload failed:", error);
+      console.error(" failed:", error);
     }
   };
 
@@ -200,17 +202,13 @@ const Userform = () => {
             className={styles["city"]}
             type="text"
             list="cities"
-            name="cities"
+            name="selectedCity"
             value={selectedCity}
             onChange={handleChange}
           />
           <datalist id="cities">
             {cities.map((city) => (
-              <option
-                key={city}
-                value={city}
-                onClick={() => handleSelect(city)}
-              />
+              <option key={city} value={city} />
             ))}
           </datalist>
         </div>
@@ -242,4 +240,4 @@ Photos.propTypes = {
   iMAGEAlt: PropTypes.string,
 };
 
-export default Userform;
+export default Useform;

@@ -50,7 +50,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -74,7 +74,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -98,7 +98,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -149,13 +149,12 @@
   cursor: pointer;
   top: 650px;
   left: 1125px;
-  
+
   display: flex;
   position: absolute;
-  
+
   align-items: flex-start;
   flex-shrink: 1;
- 
 }
 
 .accountsetting {
@@ -198,10 +197,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 
 .emailinput {
@@ -210,10 +205,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 
 .passwordinput {
@@ -222,8 +213,4 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }

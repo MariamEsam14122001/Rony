@@ -1,9 +1,7 @@
 import React from "react";
 import red from "../pictures/redhearticon.svg";
 import empty from "../pictures/empty_heart.svg";
-import { useWishlist } from "../Context/WishlistContext";
-
-import React from "react";
+import { useWishlist } from "../../Context/WishlistContext";
 
 import { useSelector } from "react-redux";
 

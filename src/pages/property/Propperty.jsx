@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./property.module.css";
-
 import img6 from "../pictures/location.png";
 import img7 from "../pictures/provide.png";
-
-import HeartButton from "../../componets/heart/Heart.jsx";
+import HeartButton from "../componets/Heart.jsx";
 import VRList from "../../componets/vr/VRList.jsx";
 import ImagesList from "../../componets/vr/ImagesList.jsx";
 import img1 from "../pictures/line.png";
 import Header from "../../componets/header/Header.jsx";
-//import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 //import img from "./pictures/image.jpg";
-//import axios from "axios";
+import WhatsAppButton from "../../componets/rentbutton/Rent.jsx";
+import StarRating from "../../componets/ratingandreview/RC.jsx";
+import { useLocation } from "react-router-dom";
 //import { ItemContext } from "../../Context/itemContext.jsx";
 
 const PropertyDetails = (props) => {
@@ -28,22 +26,6 @@ const PropertyDetails = (props) => {
   //   return <div>Loading...</div>;
   // }
 
-  //third way
-  //  const { id } = useParams();
-  //  const [item, setItem] = useState(null);
-
-  //  useEffect(() => {
-  //    // Fetch item details from the backend API
-  //    axios
-  //      .get(`http://localhost:8000/items/${id}`)
-  //      .then((response) => {
-  //        setItem(response.data);
-  //      })
-  //      .catch((error) => {
-  //        console.error("Error fetching item details:", error);
-  //      });
-  //  }, [id]);
-
   //Panorama show
   const [showPanorama, setShowPanorama] = useState(false);
 
@@ -51,19 +33,19 @@ const PropertyDetails = (props) => {
     setShowPanorama(!showPanorama);
   };
 
-  //rating
-
   return (
     <>
       <Header />
+      <WhatsAppButton />
+      <StarRating />
       <div className={styles["property-details"]}>
         <div className={styles["image1"]}>
-          {showPanorama ? (
+          {item && showPanorama ? (
             <div className={styles["panorama-image"]}>
               <VRList images={item.images} />
             </div>
           ) : (
-            <ImagesList images={item.images} />
+            item && <ImagesList images={item.images} />
           )}
         </div>
         <button onClick={togglePanorama} className={styles["vrbutton"]} />
@@ -75,7 +57,7 @@ const PropertyDetails = (props) => {
           <span>Bedrooms: 2</span>
         </span>
         <span className={styles["d4"]}>
-          <span>Available from:{item.availability}</span>
+          <span>Available from: {item ? item.availability : "Loading..."}</span>
         </span>
         <span className={styles["d5"]}>
           <span>Property size: 98 sqft</span>
@@ -86,7 +68,7 @@ const PropertyDetails = (props) => {
 
         <div className={styles["rentdetails"]} />
         <span className={styles["r1"]}>
-          <span>{item.price} EGP/Monthly</span>
+          <span>{item ? `${item.price} EGP/Monthly` : "Loading..."}</span>
         </span>
 
         <div className={styles["line2"]} />
@@ -97,7 +79,7 @@ const PropertyDetails = (props) => {
         </span>
 
         <div className={styles["rectangle12"]}>
-          {} <HeartButton id={item.id} />
+          <HeartButton id={item.id} />
         </div>
 
         <img src={img1} alt="gege" className={styles["line"]} />
@@ -113,7 +95,7 @@ const PropertyDetails = (props) => {
             left: "150px",
           }}
         >
-          <p>{item.description}</p>
+          <p>{item ? item.description : "Loading..."}</p>
         </div>
 
         <span className={styles["location"]}>
@@ -121,7 +103,7 @@ const PropertyDetails = (props) => {
         </span>
         <img src={img6} alt={props} className={styles["locationphoto"]} />
         <span className={styles["text15"]}>
-          <span>{item.location}</span>
+          <span>{item ? item.location : "Loading..."}</span>
         </span>
 
         <span className={styles["provider"]}>

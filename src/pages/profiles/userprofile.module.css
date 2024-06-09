@@ -23,7 +23,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -34,10 +34,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .userprofile {
   top: 67px;
@@ -74,7 +70,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -98,7 +94,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -122,7 +118,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -138,7 +134,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -154,7 +150,7 @@
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -171,7 +167,7 @@
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -211,10 +207,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 
 .emailinput {
@@ -223,10 +215,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .genderinput {
   top: 474px;
@@ -234,10 +222,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .age {
   top: 524px;
@@ -250,7 +234,7 @@
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -261,10 +245,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .cityinput {
   top: 630px;
@@ -272,10 +252,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .ageinput {
   top: 555px;
@@ -283,10 +259,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .phoneinput {
   top: 705px;
@@ -294,22 +266,16 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
-
 
 .button1 {
   top: 450px;
   left: 1120px;
- 
+
   cursor: pointer;
- 
+
   display: flex;
   position: absolute;
   align-items: flex-start;
   flex-shrink: 1;
-  
 }

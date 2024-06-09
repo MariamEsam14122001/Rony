@@ -20,6 +20,9 @@ import Accomodations from "./pages/dashboard/Accommodations.jsx";
 import Deactivatedaccounts from "./pages/dashboard/Deactivatedaccounts.jsx";
 import UsersAccounts from "./pages/dashboard/UsersAccounts.jsx";
 import PrivateRoute from "./Context/PrivateRoute.jsx";
+import Home from "./pages/dashboard/Servicelist.jsx";
+import Ownform from "./pages/accounts/Owneraccount.jsx";
+import Useform from "./pages/accounts/Useraccount.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -55,6 +58,10 @@ const router = createBrowserRouter([
     element: <Deactivatedaccounts />,
   },
   { path: "/user", element: <UsersAccounts /> },
+  { path: "/Owneraccount", element: <Ownform /> },
+  { path: "/Useraccount", element: <Useform /> },
+
+  { path: "/servicelist", element: <Home /> },
 ]);
 
 export default router;

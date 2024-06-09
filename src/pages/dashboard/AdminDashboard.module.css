@@ -15,7 +15,7 @@
   cursor: pointer;
   background-color: rgba(9, 192, 248, 0.507);
   border: none;
-  background-image: url("l.png");
+  background-image: url("./pictures/l.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position-x: center;
@@ -30,7 +30,7 @@
   cursor: pointer;
   background-color: rgba(9, 192, 248, 0.507);
   border: none;
-  background-image: url("j.png");
+  background-image: url("./pictures/j.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position-x: center;
@@ -45,7 +45,7 @@
   cursor: pointer;
   background-color: rgba(9, 192, 248, 0.507);
   border: none;
-  background-image: url("b.png");
+  background-image: url("./pictures/b.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position-x: center;
@@ -57,7 +57,7 @@
   width: 200px;
   height: 200px;
   top: 50px;
-  background-image: url("e.png");
+  background-image: url("./pictures/e.png");
   background-repeat: no-repeat;
   background-color: rgba(9, 192, 248, 0.507);
   background-size: auto;
@@ -66,12 +66,12 @@
 .Admin {
   position: absolute;
   left: 50px;
-  width: 100px;
+  width: 120px;
   height: 40px;
   border-radius: 20px;
   top: 150px;
   border: none;
-  background-color: rgb(8, 8, 122);
+  background-color: rgba(9, 192, 248, 0.507);
   color: white;
   cursor: pointer;
   background-size: auto;
@@ -88,7 +88,7 @@
   cursor: pointer;
   border: none;
   background-color: rgba(9, 192, 248, 0.507);
-  background-image: url("t.png");
+  background-image: url("./pictures/t.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position-x: center;
@@ -103,7 +103,7 @@
   top: 270px;
   cursor: pointer;
   background-color: rgba(9, 192, 248, 0.507);
-  background-image: url("r.png");
+  background-image: url("./pictures/r.png");
   background-size: auto;
   background-position-x: center;
   background-repeat: no-repeat;

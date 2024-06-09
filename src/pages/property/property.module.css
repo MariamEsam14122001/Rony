@@ -63,9 +63,7 @@
   border: 5px;
   border-style: solid;
   border-color: rgba(172, 233, 252, 0.548);
- 
 }
-
 
 .panorama-image {
   width: 100%;
@@ -74,7 +72,6 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  
 }
 
 .rentdetails {
@@ -142,11 +139,8 @@
 .rentbutton {
   top: 732px;
   left: 1250px;
-  width: 233px;
-  height: 40px;
+
   position: absolute;
-  border-radius: 20px;
-  background-color: rgba(9, 192, 248, 0.507);
 }
 .renttext {
   top: 738px;

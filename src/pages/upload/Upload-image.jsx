@@ -35,10 +35,6 @@ const Uploadform = () => {
     "South Sinai",
     "Suez",
   ];
-  const [selectedCity, setSelectedCity] = useState("");
-  const handleSelect = (city) => {
-    setSelectedCity(city);
-  };
 
   const [formData, setFormData] = useState({
     description: "",
@@ -47,42 +43,37 @@ const Uploadform = () => {
     region: "",
     price: "",
     facilities: "",
-    shared: "",
-    individual: "",
+    shared_or_individual: "",
     image: "",
-    selectedCity: "",
+    city: "", // renamed to `city`
   });
 
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: files ? files[0] : value, // Handle file input
     });
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
+    setFormData({
+      ...formData,
+      image: file, // Update formData with selected file
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const data = new FormData();
-    data.append("description", formData.description);
-    data.append("address", formData.address);
-    data.append("location_link", formData.location_link);
-    data.append("region", formData.region);
-    data.append("price", formData.price);
-    data.append("facilities", formData.facilities);
-    data.append("shared_or_individual", formData.shared_or_individual);
-    data.append("city", selectedCity);
-    if (selectedFile) {
-      data.append("image", selectedFile);
-    }
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
 
     try {
       const response = await axios.post(
@@ -175,7 +166,7 @@ const Uploadform = () => {
 
         <input
           onChange={handleChange}
-          value={formData.shared}
+          value="shared"
           id="shared"
           type="radio"
           name="shared_or_individual"
@@ -184,7 +175,7 @@ const Uploadform = () => {
         <span className={styles["sharedtext"]}>Shared</span>
         <input
           onChange={handleChange}
-          value={formData.individual}
+          value="individual"
           id="individual"
           type="radio"
           name="shared_or_individual"
@@ -199,17 +190,13 @@ const Uploadform = () => {
             className={styles["city"]}
             type="text"
             list="cities"
-            name="cities"
-            value={selectedCity}
+            name="city" // use `city` to match formData
+            value={formData.city}
             onChange={handleChange}
           />
           <datalist id="cities">
             {cities.map((city) => (
-              <option
-                key={city}
-                value={city}
-                onClick={() => handleSelect(city)}
-              />
+              <option key={city} value={city} />
             ))}
           </datalist>
         </div>
@@ -221,7 +208,6 @@ const Uploadform = () => {
                 className={styles["text"]}
                 type="file"
                 onChange={handleFileChange}
-                value={formData.image}
               />
               {selectedFile && <p>Selected file: {selectedFile.name}</p>}
             </div>

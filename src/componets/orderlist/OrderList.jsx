@@ -1,38 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styles from "./styles.module.css"; // Make sure the path to your CSS file is correct
 
-// Sample data for orders
-const initialOrders = [
-  {
-    id: 1,
-    referenceNumber: "ORD123",
-    imageUrl: "https://via.placeholder.com/50",
-    endDate: "2024-06-01",
-  },
-  {
-    id: 2,
-    referenceNumber: "ORD124",
-    imageUrl: "https://via.placeholder.com/50",
-    endDate: "2024-06-02",
-  },
-  {
-    id: 3,
-    referenceNumber: "ORD125",
-    imageUrl: "https://via.placeholder.com/50",
-    endDate: "2024-06-03",
-  },
-];
-
 const OrderList = () => {
-  const [orders, setOrders] = useState(initialOrders);
+  const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState({});
 
-  const handleAccept = (id) => {
-    setOrderStatus((prevStatus) => ({ ...prevStatus, [id]: "Accepted" }));
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await axios.get("http://your-backend-api-url/orders");
+        setOrders(response.data);
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
+
+    fetchOrders();
+  }, []);
+
+  const handleAccept = async (id) => {
+    try {
+      await axios.put(`http://your-backend-api-url/orders/${id}/accept`);
+      setOrderStatus((prevStatus) => ({ ...prevStatus, [id]: "Accepted" }));
+    } catch (error) {
+      console.error("Error accepting order:", error);
+    }
   };
 
-  const handleDefuse = (id) => {
-    setOrders((prevOrders) => prevOrders.filter((order) => order.id !== id));
+  const handleDefuse = async (id) => {
+    try {
+      await axios.delete(`http://your-backend-api-url/orders/${id}`);
+      setOrders((prevOrders) => prevOrders.filter((order) => order.id !== id));
+    } catch (error) {
+      console.error("Error defusing order:", error);
+    }
   };
 
   return (

@@ -1,6 +1,8 @@
 .starrating {
   font-size: 24px;
   cursor: pointer;
+  position: absolute;
+  top: 1670px;
 }
 
 .star {
@@ -65,7 +67,7 @@
   padding: 5px;
   position: absolute;
   left: 500px;
-  top: 200px;
+  top: 1800px;
   font-size: large;
   font-weight: 500;
   cursor: pointer;
@@ -77,6 +79,7 @@
   left: 30px;
   font-size: large;
   font-weight: 600;
+  top: 1630px;
 }
 .Ratinn {
   color: rgb(9, 192, 248);
@@ -84,11 +87,12 @@
   left: 100px;
   font-size: large;
   font-weight: 600;
+  top: 1630px;
 }
 .Review {
   color: blue;
   position: absolute;
-  top: 120px;
+  top: 1720px;
   left: 30px;
   font-weight: 600;
   font-size: large;
@@ -96,6 +100,6 @@
 .text {
   color: blue;
   position: absolute;
-  top: 160px;
+  top: 1760px;
   left: 30px;
 }

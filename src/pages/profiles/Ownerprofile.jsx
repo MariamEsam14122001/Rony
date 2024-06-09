@@ -87,21 +87,21 @@ const Ownerform = () => {
           <span className={styles["userprofile"]}>Owner Profile</span>
 
           <div className={styles["full-name"]}>
-            <span className={styles["name"]}>Name</span>
+            <span className={styles["name"]}>Name:</span>
           </div>
           <p className={styles["nameinput"]}>{ownerData.name}</p>
 
           <div className={styles["email-address"]}>
-            <span className={styles["email"]}>Email Address</span>
+            <span className={styles["email"]}>Email Address:</span>
           </div>
           <p className={styles["emailinput"]}>{ownerData.email}</p>
 
           <div className={styles["password"]}>
-            <span className={styles["password1"]}>Password</span>
+            <span className={styles["password1"]}>Password:</span>
           </div>
           <p className={styles["passwordinput"]}>{ownerData.password}</p>
 
-          <Link to="/settings">
+          <Link to="/Owneraccount">
             <button
               name="setting"
               id="setting"

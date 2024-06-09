@@ -68,43 +68,43 @@ const Userform = () => {
           <span className={styles["userprofile"]}>User Profile</span>
 
           <div className={styles["full-name"]}>
-            <span className={styles["name"]}>Name</span>
+            <span className={styles["name"]}>Name:</span>
           </div>
           <p className={styles["nameinput"]}>{userData.name}</p>
 
           <div className={styles["email-address"]}>
-            <span className={styles["email"]}>Email Address</span>
+            <span className={styles["email"]}>Email Address:</span>
           </div>
           <p className={styles["emailinput"]}>{userData.email}</p>
 
           <div className={styles["password"]}>
-            <span className={styles["password1"]}>Password</span>
+            <span className={styles["password1"]}>Password:</span>
           </div>
           <p className={styles["passwordinput"]}>{userData.password}</p>
 
           <div>
-            <span className={styles["status"]}>Status</span>
+            <span className={styles["status"]}>Status:</span>
           </div>
           <p className={styles["statusinput"]}>{userData.status}</p>
 
-          <span className={styles["gender"]}>Gender</span>
+          <span className={styles["gender"]}>Gender:</span>
           <p className={styles["genderinput"]}>{userData.gender}</p>
 
           <span className={styles["age"]}>
-            <span>Age</span>
+            <span>Age:</span>
           </span>
           <p className={styles["ageinput"]}>{userData.age}</p>
 
           <span className={styles["city"]}>
-            <span>City</span>
+            <span>City:</span>
           </span>
           <p className={styles["cityinput"]}>{userData.city}</p>
 
           <div>
-            <span className={styles["phone"]}>Phone</span>
+            <span className={styles["phone"]}>Phone:</span>
           </div>
           <p className={styles["phoneinput"]}>{userData.phone}</p>
-          <Link to="/settings">
+          <Link to="/Useraccount">
             <button name="setting" id="setting" className={styles["button"]}>
               <span className={styles["accountsetting"]}>Account Setting</span>
             </button>

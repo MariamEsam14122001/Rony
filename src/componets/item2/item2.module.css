@@ -1,7 +1,6 @@
 .card {
-  margin-left: 400px ;
+  margin-left: 400px;
   margin-bottom: 50px;
- 
 }
 .item {
   width: 50px;
@@ -12,13 +11,9 @@
   align-items: flex-start;
   flex-shrink: 1;
   background-color: rgba(255, 255, 255, 1);
- 
-
-    
 }
 
 .wishlist {
- 
   top: 29rem;
   left: 20rem;
   width: 64px;
@@ -57,8 +52,6 @@
   text-decoration: none;
 }
 
-
-
 .text2 {
   color: rgba(232, 151, 75, 1);
   height: auto;
@@ -95,7 +88,7 @@
 .image {
   top: 1rem;
   left: 1rem;
-  width: 30rem;
+  width: 25rem;
   height: 15rem;
   position: absolute;
   border-radius: 16px;
@@ -105,5 +98,3 @@
   left: 112px;
   position: absolute;
 }
-
-

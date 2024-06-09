@@ -11,7 +11,10 @@ function Item2({ id, name, age, location, image }) {
 
           <div className={styles["content"]}>
             <div className={styles["frame53"]}>
-              <span className={styles["text"]}>{name}</span>
+              <span className={styles["text"]}>
+                {id}
+                {name}
+              </span>
               <span className={styles["text2"]}>{age}</span>
             </div>
             <p>About</p>

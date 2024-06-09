@@ -1,37 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 //import { Link } from "react-router-dom";
 import Side from "../../componets/sidebar/Sidebarcomponents.jsx";
-import Items from "../../componets/item/Items.jsx";
-const accommodations = [
-  {
-    id: 1,
-    title: "Luxury Villa",
-    price: "$500",
-    location: "Los Angeles, CA",
-    image: "luxury-villa.JPEG",
-  },
-  {
-    id: 2,
-    title: "Beachfront Condo",
-    price: "$300",
-    location: "Miami, FL",
-    image: "beachfront-condo.JPEG",
-  },
-  {
-    id: 3,
-    title: "Mountain Cabin",
-    price: "$200",
-    location: "Aspen, CO",
-    image: "mountain-cabin.JPEG",
-  },
-  // Add more accommodation objects as needed
-];
-
+import Items2 from "../../componets/item2/Items2.jsx";
+import axios from "axios";
 function Accommodations() {
+  const [accommodations, setAccommodations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchAccounts = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/api/accounts");
+        setAccommodations(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchAccounts();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <div>
       <Side />
-      <Items accommodations={accommodations} />
+      <Items2 datasets={accommodations} />
     </div>
   );
 }

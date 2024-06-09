@@ -1,7 +1,7 @@
 import img from "../pictures/logo.svg";
 import React, { useState } from "react";
 import styles from "./sidebarcomponents.module.css";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Side = () => {
   const [isUserAccountExpanded, setIsUserAccountExpanded] = useState(false);
 
@@ -34,32 +34,42 @@ const Side = () => {
               <div>
                 <li>
                   {" "}
-                  <button className={styles.buttonchild}>
-                    providers accounts
-                  </button>
+                  <Link to="/provider">
+                    {" "}
+                    <button className={styles.buttonchild}>
+                      providers accounts
+                    </button>
+                  </Link>
                 </li>
                 <li>
                   {" "}
-                  <button className={styles.buttonchild}>users Accounts</button>
+                  <Link to="/user">
+                    {" "}
+                    <button className={styles.buttonchild}>
+                      users Accounts
+                    </button>
+                  </Link>
                 </li>
                 <li>
                   {" "}
-                  <button className={styles.buttonchild}>
-                    Deactivated Accounts
-                  </button>
+                  <Link to="/deactivated">
+                    <button className={styles.buttonchild}>
+                      Deactivated Accounts
+                    </button>
+                  </Link>
                 </li>
               </div>
             )}
           </ul>
 
-          <ul className={styles.button1}>Accommodations</ul>
+          <Link to="/accomodations">
+            <ul className={styles.button1}>Accommodations</ul>
+          </Link>
 
-          <ul className={styles.button2}>admin</ul>
-
-          <ul className={styles.button3}>Settings</ul>
-          <ul className={styles.button4}>Analytics</ul>
-
-          <ul className={styles.button5}>Support</ul>
+          <Link to="/servicelist">
+            {" "}
+            <ul className={styles.button2}>Service List</ul>
+          </Link>
         </ul>
       </div>
     </div>
