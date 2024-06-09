@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 import styles from "./upload.module.css";
 import home from "../pictures/up.png";
-import Welcome from "../../componets/welcome/Welcome";
+import Welcome from "../../components/welcome/Welcome";
 
 const OwnersEdit = () => {
-  //fetch data details
   const { id } = useParams();
 
   const cities = ["Alexandria", "Aswan", "Cairo"];
@@ -26,7 +26,6 @@ const OwnersEdit = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
-    // Fetch property data from the server when the component mounts
     fetchPropertyData();
   }, []);
 
@@ -50,7 +49,15 @@ const OwnersEdit = () => {
   };
 
   const handleFileChange = (e) => {
-    setSelectedFile(e.target.files[0]);
+    const file = e.target.files[0];
+    if (
+      file &&
+      ["image/png", "image/jpg", "image/jpeg", "image/webp"].includes(file.type)
+    ) {
+      setSelectedFile(file);
+    } else {
+      console.error("Unsupported file format");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -58,7 +65,9 @@ const OwnersEdit = () => {
 
     try {
       const formData = new FormData();
-      formData.append("images", selectedFile);
+      if (selectedFile) {
+        formData.append("images", selectedFile);
+      }
       for (const key in propertyData) {
         formData.append(key, propertyData[key]);
       }
@@ -124,7 +133,6 @@ const OwnersEdit = () => {
         />
 
         <span className={styles["rentaltext"]}>Rental Price</span>
-
         <input
           onChange={handleChange}
           name="price"
@@ -145,13 +153,13 @@ const OwnersEdit = () => {
         <span className={styles["ortext"]}>
           Shared Or Individual Apartment?
         </span>
-
         <input
           onChange={handleChange}
           value="Shared"
           type="radio"
           name="shared_or_individual"
           className={styles["sharedradio"]}
+          checked={propertyData.shared_or_individual === "Shared"}
         />
         <span className={styles["sharedtext"]}>Shared</span>
         <input
@@ -160,6 +168,7 @@ const OwnersEdit = () => {
           type="radio"
           name="shared_or_individual"
           className={styles["invidualradio"]}
+          checked={propertyData.shared_or_individual === "Individual"}
         />
         <span className={styles["invidualtext"]}>Individual</span>
 
@@ -168,7 +177,6 @@ const OwnersEdit = () => {
         </button>
 
         <span className={styles["governoratetext"]}>Governorate</span>
-
         <div>
           <select
             name="city"
