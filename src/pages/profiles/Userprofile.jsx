@@ -14,7 +14,9 @@ const Userform = () => {
   useEffect(() => {
     const fetchPhotoUrl = async () => {
       try {
-        const response = await axios.get("http://example.com/api/photo");
+        const response = await axios.get(
+          `http://localhost:8000/api/user/profile/${photo}`
+        );
         setPhotoUrl(response.data.photoUrl);
         setIsLoading(false);
       } catch (error) {
@@ -39,7 +41,7 @@ const Userform = () => {
   useEffect(() => {
     // Fetch user data from the backend
     axios
-      .get("http://localhost:8000/api/user")
+      .get("http://localhost:8000/api/user/profile")
       .then((response) => {
         setUserData(response.data);
       })

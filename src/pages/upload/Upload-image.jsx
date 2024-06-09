@@ -44,7 +44,7 @@ const Uploadform = () => {
     price: "",
     facilities: "",
     shared_or_individual: "",
-    image: "",
+    images: "",
     city: "", // renamed to `city`
   });
 
@@ -63,7 +63,7 @@ const Uploadform = () => {
     setSelectedFile(file);
     setFormData({
       ...formData,
-      image: file, // Update formData with selected file
+      images: file, // Update formData with selected file
     });
   };
 
@@ -77,7 +77,7 @@ const Uploadform = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/upload",
+        "http://localhost:8000/api/accommodationform",
         data,
         {
           headers: {

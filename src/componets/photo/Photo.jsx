@@ -7,7 +7,6 @@ const Photos = (props) => {
 
   return (
     <div className={styles["photoo"]}>
-      {/* Use the photoUrl received from the backend */}
       <img alt={altText} src={photoUrl} />
     </div>
   );
