@@ -14,7 +14,7 @@ const OwnerHeader = (props) => {
           <Link>My Accommodations</Link>
         </li>
         <li>
-          <Link>Help</Link>
+          <Link to="/help">Help</Link>
         </li>
         <li>
           <Link to="/Getstarted">Get started </Link>
