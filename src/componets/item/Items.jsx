@@ -2,9 +2,10 @@
 import React from "react";
 import Item from "./Item";
 import styles from "./items.module.css";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Items = ({ accommodations, likedItems, onToggleLike }) => {
+const Items = ({ accommodations = [], likedItems = [], onToggleLike }) => {
   return (
     <div className={styles["card-container"]}>
       <div className="row  row-cols-md-3 g-3">
@@ -19,7 +20,7 @@ const Items = ({ accommodations, likedItems, onToggleLike }) => {
               title={accommodation.title}
               price={accommodation.price}
               location={accommodation.location}
-              image={accommodation.image}
+              main_image={accommodation.main_image}
               phone={accommodation.phone}
               shared_or_individual={accommodation.shared_or_individual}
               isLiked={likedItems.includes(accommodation.id)}
@@ -31,6 +32,12 @@ const Items = ({ accommodations, likedItems, onToggleLike }) => {
       </div>
     </div>
   );
+};
+
+Items.propTypes = {
+  accommodations: PropTypes.array.isRequired,
+  likedItems: PropTypes.array.isRequired,
+  onToggleLike: PropTypes.func.isRequired,
 };
 
 export default Items;

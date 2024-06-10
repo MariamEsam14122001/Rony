@@ -15,24 +15,27 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const authToken = useSelector((state) => state.auth.token);
-  const [items, setItems] = useState([]);
+  const [accommodations, setAccommodations] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchItems();
+    fetchAccommodations();
   }, []);
 
-  const fetchItems = async () => {
+  const fetchAccommodations = async () => {
     try {
-      const token = sessionStorage.getItem("authToken"); // Assuming you store the token in localStorage
-      const response = await axios.get("http://localhost:8000/items", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setItems(response.data);
+      const token = sessionStorage.getItem("authToken");
+      const response = await axios.get(
+        "http://localhost:8000/api/accommodation/some",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setAccommodations(response.data.accommodations || []);
     } catch (error) {
-      console.error("Error fetching items:", error);
+      console.error("Error fetching accommodations:", error);
     }
   };
 
@@ -55,7 +58,7 @@ const Home = () => {
           <SearchBar onSearch={handleSearch} />
         </div>
         <Title />
-        {authToken && <Items accommodations={items} />}
+        {authToken && <Items accommodations={accommodations} />}
       </div>
       <Footer />
     </div>

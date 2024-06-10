@@ -8,27 +8,43 @@ export const useWishlist = () => useContext(WishlistContext);
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
 
-  const fetchLikedItems = async () => {
+  const fetchLikedItems = async (token) => {
     try {
-      const response = await axios.get("http://localhost:5000/wishlist");
+      const response = await axios.get("http://localhost:5000/wishlist", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setWishlist(response.data);
     } catch (error) {
       console.error("Error fetching liked items:", error);
     }
   };
 
-  const addToWishlist = async (itemId) => {
+  const addToWishlist = async (itemId, token) => {
     try {
-      await axios.post("http://localhost:5000/wishlist/add", { id: itemId });
+      await axios.post(
+        "http://localhost:5000/wishlist/add",
+        { id: itemId },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setWishlist([...wishlist, itemId]);
     } catch (error) {
       console.error("Error adding item to wishlist:", error);
     }
   };
 
-  const removeFromWishlist = async (itemId) => {
+  const removeFromWishlist = async (itemId, token) => {
     try {
-      await axios.delete(`http://localhost:5000/wishlist/remove/${itemId}`);
+      await axios.delete(`http://localhost:5000/wishlist/remove/${itemId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setWishlist(wishlist.filter((item) => item !== itemId));
     } catch (error) {
       console.error("Error removing item from wishlist:", error);

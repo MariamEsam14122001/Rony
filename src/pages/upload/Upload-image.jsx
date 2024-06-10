@@ -6,6 +6,8 @@ import Welcome from "../../componets/welcome/Welcome";
 import axios from "axios";
 
 const Uploadform = () => {
+  const ownerData = useSelector((state) => state.auth.userProfile); // Get owner data from Redux
+
   const cities = [
     "Alexandria",
     "Aswan",
@@ -46,10 +48,11 @@ const Uploadform = () => {
     shared_or_individual: "",
     city: "",
     no_of_tenants: "",
+    owner_id: ownerData.id, // Include owner's ID in the form data
   });
 
   const [selectedFiles, setSelectedFiles] = useState({
-    images: null,
+    images: [], // Change to an array to store multiple images
     main_image: null,
   });
 
@@ -65,7 +68,7 @@ const Uploadform = () => {
     const { name, files } = e.target;
     setSelectedFiles({
       ...selectedFiles,
-      [name]: files[0],
+      [name]: [...selectedFiles[name], ...files], // Append new files to the existing array
     });
   };
 
@@ -77,14 +80,15 @@ const Uploadform = () => {
       data.append(key, formData[key]);
     });
 
-    if (selectedFiles.images) {
-      data.append("images", selectedFiles.images);
-    }
+    selectedFiles.images.forEach((file) => {
+      data.append("images", file); // Append each image file to the FormData
+    });
+
     if (selectedFiles.main_image) {
       data.append("main_image", selectedFiles.main_image);
     }
 
-    const token = sessionStorage.getItem("authToken");
+    const token = localStorage.getItem("authToken");
 
     if (!token) {
       console.error("No token found");
@@ -107,12 +111,9 @@ const Uploadform = () => {
       console.error("Upload failed:", error);
       if (error.response) {
         console.error("Server responded with:", error.response.data);
-      } else {
-        console.error("No response received from the server");
       }
     }
   };
-
   return (
     <>
       <Welcome image={home} />
@@ -245,12 +246,13 @@ const Uploadform = () => {
                 type="file"
                 name="images"
                 onChange={handleFileChange}
+                multiple // Allow multiple file selection
               />
-              {selectedFiles.images && (
-                <p className={styles["teext"]}>
-                  Selected file: {selectedFiles.images.name}
+              {selectedFiles.images.map((file, index) => (
+                <p key={index} className={styles["teext"]}>
+                  Selected file: {file.name}
                 </p>
-              )}
+              ))}
             </div>
             <span className={styles["text04"]}>
               Supports: PNG, JPG, JPEG, WEBP

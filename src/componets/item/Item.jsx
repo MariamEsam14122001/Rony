@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./item.module.css";
 import loc from "../pictures/location.png";
-// import red from "../pictures/red-heart-icon.svg";
-// import empty from "../pictures/empty_heart.svg";
-//import { useWishlist } from "../../Context/WishlistContext";
 import HeartButton from "../heart/Heart";
 
 function Item({
@@ -11,7 +8,7 @@ function Item({
   title,
   price,
   location,
-  image,
+  main_image,
   description,
   shared_or_individual,
 }) {
@@ -37,7 +34,7 @@ function Item({
               <span className={styles["text"]}>{shared_or_individual}</span>
               <span className={styles["text"]}>0111111111</span>
             </div>
-            <img src={image} alt={title} className={styles["image"]} />
+            <img src={main_image} alt={title} className={styles["image"]} />
           </div>
         </div>
       </div>
