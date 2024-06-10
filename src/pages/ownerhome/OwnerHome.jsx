@@ -5,7 +5,6 @@ import HeadOwner from "../../componets/header/Headowner.jsx";
 import ItemsOwner from "../../componets/itemowner/ItemsOwner.jsx";
 
 const Owner = () => {
-  //ownersitems
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -13,8 +12,23 @@ const Owner = () => {
   }, []);
 
   const fetchItems = async () => {
-    const response = await axios.get("http://localhost:5000/api/items");
-    setItems(response.data);
+    const token = localStorage.getItem("authToken"); // Get the owner's authentication token
+
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+
+    try {
+      const response = await axios.get("http://localhost:5000/api/items", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setItems(response.data);
+    } catch (error) {
+      console.error("Error fetching items:", error);
+    }
   };
 
   const deleteItem = async (itemId) => {
@@ -22,7 +36,6 @@ const Owner = () => {
       await fetch(`http://localhost:5000/api/items/${itemId}`, {
         method: "DELETE",
       });
-      // Update the items state to remove the deleted item
       setItems(items.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("Error deleting item:", error);
@@ -33,9 +46,9 @@ const Owner = () => {
     <div>
       <OwnerHeader />
       <HeadOwner />
-      {/*ownersitems*/}
       <ItemsOwner accommodations={items} onDelete={deleteItem} />
     </div>
   );
 };
+
 export default Owner;

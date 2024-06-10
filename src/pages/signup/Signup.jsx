@@ -1,4 +1,3 @@
-// src/pages/signup/Signup.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import Welcome from "../../componets/welcome/Welcome";
@@ -6,7 +5,11 @@ import styles from "./signup.module.css";
 import img from "../pictures/logsign.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setAuthToken, setUserRole } from "../../redux/authSlice";
+import {
+  setAuthToken,
+  setUserRole,
+  setUserProfile,
+} from "../../redux/authSlice"; // Updated import
 
 const Signup = () => {
   const cities = [
@@ -95,13 +98,21 @@ const Signup = () => {
         ...formData,
         user_type: userType,
       });
-      sessionStorage.setItem("authToken", response.data.token);
-      sessionStorage.setItem("userRole", getRoleFromEmail(formData.email));
-      dispatch(setAuthToken(response.data.token));
-      dispatch(setUserRole(getRoleFromEmail(formData.email)));
-      console.log("Signup successful:", response.data);
+      const token = response.data.token;
+      const user = response.data.user;
+      const userRole = getRoleFromEmail(formData.email);
 
-      navigateToRolePage(getRoleFromEmail(formData.email));
+      // Update session storage and Redux store
+      sessionStorage.setItem("authToken", token);
+      sessionStorage.setItem("userRole", userRole);
+      sessionStorage.setItem("userProfile", JSON.stringify(user));
+
+      dispatch(setAuthToken(token));
+      dispatch(setUserRole(userRole));
+      dispatch(setUserProfile(user));
+
+      console.log("Signup successful:", response.data);
+      navigateToRolePage(userRole);
     } catch (error) {
       console.error("Signup failed:", error);
       setError("Signup failed. Please try again.");

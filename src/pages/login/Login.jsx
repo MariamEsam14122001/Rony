@@ -1,4 +1,3 @@
-// src/pages/login/Login.jsx
 import React, { useState } from "react";
 import Welcome from "../../componets/welcome/Welcome";
 import styles from "./login.module.css";
@@ -6,7 +5,11 @@ import img from "../pictures/logsign.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setAuthToken, setUserRole } from "../../redux/authSlice";
+import {
+  setAuthToken,
+  setUserRole,
+  setUserProfile,
+} from "../../redux/authSlice"; // Updated import
 
 function Login() {
   const navigate = useNavigate();
@@ -33,17 +36,20 @@ function Login() {
         formData
       );
       const token = response.data.token;
+      const user = response.data.user;
       const email = formData.email;
 
       // Check if the user is an admin based on email
       const isAdmin = email.endsWith("@example.com");
       const userType = isAdmin ? "admin" : response.data.userType;
 
-      // Store in session and Redux
-      sessionStorage.setItem("authToken", token);
-      sessionStorage.setItem("userRole", userType);
+      // Store in localStorage and Redux
+      localStorage.setItem("authToken", token);
+      localStorage.setItem("userRole", userType);
+      localStorage.setItem("userProfile", JSON.stringify(user));
       dispatch(setAuthToken(token));
       dispatch(setUserRole(userType));
+      dispatch(setUserProfile(user));
 
       console.log("Login successful:", response.data);
       navigateToRolePage(userType);

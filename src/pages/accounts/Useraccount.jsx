@@ -93,6 +93,40 @@ const Useform = () => {
     }
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const formDataToSend = new FormData();
+  //   formDataToSend.append("nameinput", formData.nameinput);
+  //   formDataToSend.append("emailinput", formData.emailinput);
+  //   formDataToSend.append("passwordinput", formData.passwordinput);
+  //   formDataToSend.append("statusinput", formData.statusinput);
+  //   formDataToSend.append("genderinput", formData.genderinput);
+  //   formDataToSend.append("ageinput", formData.ageinput);
+  //   formDataToSend.append("phoneinput", formData.phoneinput);
+  //   formDataToSend.append("city", formData.city);
+
+  //   // Check if image is present before appending
+  //   if (formData.imageinput) {
+  //     formDataToSend.append("imageinput", formData.imageinput);
+  //   }
+
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:8000/api/updateUser",
+  //       formDataToSend,
+  //       {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //         },
+  //       }
+  //     );
+  //     console.log("Updating data successful:", response.data);
+  //   } catch (error) {
+  //     console.error("Updating data failed:", error);
+  //   }
+  // };
+
   return (
     <>
       <Photos />

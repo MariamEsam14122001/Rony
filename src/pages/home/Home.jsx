@@ -11,29 +11,34 @@ import SearchBar from "../../componets/searchbar/SearchBar.jsx";
 import { /*Link,*/ useNavigate } from "react-router-dom";
 import axios from "axios";
 import Items from "../../componets/item/Items.jsx";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  //recommended
+  const authToken = useSelector((state) => state.auth.token);
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchItems();
   }, []);
 
   const fetchItems = async () => {
-    // Simulated data for demonstration
-    const response = await axios.get("http://localhost:8000/items");
-    setItems(response.data);
+    try {
+      const token = sessionStorage.getItem("authToken"); // Assuming you store the token in localStorage
+      const response = await axios.get("http://localhost:8000/items", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setItems(response.data);
+    } catch (error) {
+      console.error("Error fetching items:", error);
+    }
   };
-
-  //search
-
-  const navigate = useNavigate();
 
   const handleSearch = async (params) => {
     try {
       const response = await axios.get("/api/search", { params });
-      // Assuming you want to navigate after setting the state
       setSearchResults(response.data);
       navigate("/search");
     } catch (error) {
@@ -42,22 +47,17 @@ const Home = () => {
   };
 
   return (
-    <div className={styles["container"]}>
-      <div className={styles["home"]}>
+    <div className={styles.container}>
+      <div className={styles.home}>
         <Header />
         <Head />
-        <div className={styles["archieve"]}>
+        <div className={styles.archieve}>
           <SearchBar onSearch={handleSearch} />
         </div>
         <Title />
-
-        {/*recommended
-        <AccommodationList accommodations={accommodationsData}/>*/}
-
-        <Items accommodations={items} />
-
-        <Footer />
+        {authToken && <Items accommodations={items} />}
       </div>
+      <Footer />
     </div>
   );
 };

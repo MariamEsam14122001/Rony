@@ -6,49 +6,35 @@ import img from "../pictures/prof.png";
 import LogoutButton from "../../componets/logoutbutton/LogoutButton.jsx";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux"; // Import useSelector
+
 const Userform = () => {
   const [photoUrl, setPhotoUrl] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const userData = useSelector((state) => state.auth.userProfile); // Get user data from Redux
+
   useEffect(() => {
     const fetchPhotoUrl = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8000/api/user/profile/${photo}`
-        );
-        setPhotoUrl(response.data.photoUrl);
-        setIsLoading(false);
-      } catch (error) {
-        setError(error.message);
+      if (userData && userData.photo) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/api/user/profile/${userData.photo}`
+          );
+          setPhotoUrl(response.data.photoUrl);
+          setIsLoading(false);
+        } catch (error) {
+          setError(error.message);
+          setIsLoading(false);
+        }
+      } else {
         setIsLoading(false);
       }
     };
 
     fetchPhotoUrl();
-  }, []);
-  const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    status: "",
-    gender: "",
-    age: "",
-    city: "",
-    phone: "",
-  });
-
-  useEffect(() => {
-    // Fetch user data from the backend
-    axios
-      .get("http://localhost:8000/api/user/profile")
-      .then((response) => {
-        setUserData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching user data:", error);
-      });
-  }, []);
+  }, [userData]);
 
   return (
     <div>
@@ -117,12 +103,7 @@ const Userform = () => {
   );
 };
 
-Photos.defaultProps = {
-  iMAGESrc: img,
-  iMAGEAlt: "IMAGE",
-};
-
-Photos.propTypes = {
+Userform.propTypes = {
   iMAGESrc: PropTypes.string,
   iMAGEAlt: PropTypes.string,
 };

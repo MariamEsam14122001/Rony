@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+
 import styles from "./upload.module.css";
 import home from "../pictures/up.png";
 import Welcome from "../../componets/welcome/Welcome";
@@ -44,26 +44,28 @@ const Uploadform = () => {
     price: "",
     facilities: "",
     shared_or_individual: "",
-    images: "",
-    city: "", // renamed to `city`
+    city: "",
+    no_of_tenants: "",
   });
 
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState({
+    images: null,
+    main_image: null,
+  });
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: files ? files[0] : value, // Handle file input
+      [name]: value,
     });
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
-    setFormData({
-      ...formData,
-      images: file, // Update formData with selected file
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setSelectedFiles({
+      ...selectedFiles,
+      [name]: files[0],
     });
   };
 
@@ -75,12 +77,27 @@ const Uploadform = () => {
       data.append(key, formData[key]);
     });
 
+    if (selectedFiles.images) {
+      data.append("images", selectedFiles.images);
+    }
+    if (selectedFiles.main_image) {
+      data.append("main_image", selectedFiles.main_image);
+    }
+
+    const token = sessionStorage.getItem("authToken");
+
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+
     try {
       const response = await axios.post(
         "http://localhost:8000/api/accommodationform",
         data,
         {
           headers: {
+            Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         }
@@ -88,6 +105,11 @@ const Uploadform = () => {
       console.log("Upload successful:", response.data);
     } catch (error) {
       console.error("Upload failed:", error);
+      if (error.response) {
+        console.error("Server responded with:", error.response.data);
+      } else {
+        console.error("No response received from the server");
+      }
     }
   };
 
@@ -97,10 +119,9 @@ const Uploadform = () => {
 
       <form onSubmit={handleSubmit} className={styles["uploadform"]}>
         <span className={styles["upload-your-image-text"]}>
-          Upload Your Image
+          Upload Your Images
         </span>
-
-        <span className={styles["specstext"]}>Apartment Description</span>
+        <span className={styles["specstext"]}>Apartment Description :</span>
         <input
           onChange={handleChange}
           name="description"
@@ -109,8 +130,7 @@ const Uploadform = () => {
           type="text"
           className={styles["appartmentspecsinput"]}
         />
-
-        <span className={styles["addresstext"]}> Address</span>
+        <span className={styles["addresstext"]}> Address :</span>
         <input
           onChange={handleChange}
           name="address"
@@ -119,8 +139,31 @@ const Uploadform = () => {
           type="text"
           className={styles["appartmentaddressinput"]}
         />
-
-        <span className={styles["locationtext"]}>Location Link</span>
+        <span className={styles["no_of_tenants"]}>No of Tenants :</span>
+        <input
+          onChange={handleChange}
+          name="no_of_tenants"
+          value={formData.no_of_tenants}
+          id="no_of_tenants"
+          type="text"
+          className={styles["no_of_tenantsinput"]}
+        />
+        <span className={styles["main_image"]}>Main Image :</span>
+        <div>
+          <input
+            className={styles["main_imagee"]}
+            type="file"
+            name="main_image"
+            onChange={handleFileChange}
+          />
+          {selectedFiles.main_image && (
+            <p className={styles["main_ima"]}>
+              {" "}
+              {selectedFiles.main_image.name}
+            </p>
+          )}
+        </div>{" "}
+        <span className={styles["locationtext"]}>Location Link :</span>
         <input
           onChange={handleChange}
           name="location_link"
@@ -129,8 +172,7 @@ const Uploadform = () => {
           type="text"
           className={styles["locationinput"]}
         />
-
-        <span className={styles["regiontext"]}>Region </span>
+        <span className={styles["regiontext"]}>Region :</span>
         <input
           onChange={handleChange}
           name="region"
@@ -139,8 +181,7 @@ const Uploadform = () => {
           type="text"
           className={styles["regioninput"]}
         />
-
-        <span className={styles["rentaltext"]}>Rental Price</span>
+        <span className={styles["rentaltext"]}>Rental Price :</span>
         <input
           onChange={handleChange}
           name="price"
@@ -149,8 +190,7 @@ const Uploadform = () => {
           type="text"
           className={styles["rentalpriceinput"]}
         />
-
-        <span className={styles["phonetext"]}>Facilities</span>
+        <span className={styles["phonetext"]}>Facilities :</span>
         <input
           onChange={handleChange}
           name="facilities"
@@ -159,11 +199,9 @@ const Uploadform = () => {
           type="text"
           className={styles["phonenumberinput"]}
         />
-
         <span className={styles["ortext"]}>
           Shared Or Individual Apartment?
         </span>
-
         <input
           onChange={handleChange}
           value="shared"
@@ -172,7 +210,7 @@ const Uploadform = () => {
           name="shared_or_individual"
           className={styles["sharedradio"]}
         />
-        <span className={styles["sharedtext"]}>Shared</span>
+        <span className={styles["sharedtext"]}>Shared :</span>
         <input
           onChange={handleChange}
           value="individual"
@@ -181,17 +219,16 @@ const Uploadform = () => {
           name="shared_or_individual"
           className={styles["invidualradio"]}
         />
-        <span className={styles["invidualtext"]}>Individual</span>
-
-        <span className={styles["governoratetext"]}> Governorate</span>
+        <span className={styles["invidualtext"]}>Individual :</span>
+        <span className={styles["governoratetext"]}> Governorate :</span>
         <div>
           <input
             placeholder="select city"
             className={styles["city"]}
             type="text"
             list="cities"
-            name="city" // use `city` to match formData
-            value={formData.city}
+            name="governorate" // Updated to match the backend field name
+            value={formData.governorate}
             onChange={handleChange}
           />
           <datalist id="cities">
@@ -200,39 +237,32 @@ const Uploadform = () => {
             ))}
           </datalist>
         </div>
-
         <div className={styles["browse"]}>
           <div className={styles["browseimage"]}>
             <div>
               <input
                 className={styles["text"]}
                 type="file"
+                name="images"
                 onChange={handleFileChange}
               />
-              {selectedFile && <p>Selected file: {selectedFile.name}</p>}
+              {selectedFiles.images && (
+                <p className={styles["teext"]}>
+                  Selected file: {selectedFiles.images.name}
+                </p>
+              )}
             </div>
             <span className={styles["text04"]}>
               Supports: PNG, JPG, JPEG, WEBP
             </span>
           </div>
         </div>
-
         <button type="submit" className={styles["donebutton"]}>
           <span className={styles["text12"]}>Done</span>
         </button>
       </form>
     </>
   );
-};
-
-Welcome.defaultProps = {
-  iMAGESrc: home,
-  iMAGEAlt: "IMAGE",
-};
-
-Welcome.propTypes = {
-  iMAGESrc: PropTypes.string,
-  iMAGEAlt: PropTypes.string,
 };
 
 export default Uploadform;
