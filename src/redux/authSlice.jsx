@@ -11,20 +11,23 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setAuthToken(state, action) {
-      state.token = action.payload;
+    setAuthToken: (state, action) => {
+      const { payload } = action;
+      state.token = payload;
       state.isAuthenticated = true;
-      sessionStorage.setItem("authToken", action.payload);
+      sessionStorage.setItem("authToken", payload);
     },
-    setUserRole(state, action) {
-      state.role = action.payload;
-      sessionStorage.setItem("userRole", action.payload);
+    setUserRole: (state, action) => {
+      const { payload } = action;
+      state.role = payload;
+      sessionStorage.setItem("userRole", payload);
     },
-    setUserProfile(state, action) {
-      state.userProfile = action.payload;
-      sessionStorage.setItem("userProfile", JSON.stringify(action.payload));
+    setUserProfile: (state, action) => {
+      const { payload } = action;
+      state.userProfile = payload;
+      sessionStorage.setItem("userProfile", JSON.stringify(payload));
     },
-    logout(state) {
+    logout: (state) => {
       state.token = null;
       state.isAuthenticated = false;
       state.role = null;

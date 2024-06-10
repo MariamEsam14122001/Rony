@@ -1,6 +1,6 @@
 .uploadform {
   width: 733px;
-  height: 900px;
+  height: 1100px;
   display: flex;
   position: relative;
   align-items: flex-start;
@@ -32,7 +32,7 @@
   top: 90px;
   left: 114px;
   width: 475px;
-  height: 140px;
+  height: 170px;
 
   position: absolute;
   align-self: stretch;
@@ -44,14 +44,18 @@
   border-radius: 9px;
 }
 .browseimage {
-  top: 55px;
+  top: 75px;
   left: 110px;
   width: 240px;
   height: 20px;
 
   position: absolute;
 }
-
+.teext {
+  top: 40px;
+  position: absolute;
+  color: rgba(149, 157, 177, 1);
+}
 .text {
   top: -45px;
   left: -80px;
@@ -85,7 +89,7 @@
   text-decoration: none;
 }
 .specstext {
-  top: 300px;
+  top: 360px;
   left: 106px;
   color: rgba(0, 0, 0, 0.9399999976158142);
   width: 205px;
@@ -101,7 +105,7 @@
   text-decoration: none;
 }
 .appartmentspecsinput {
-  top: 330px;
+  top: 390px;
   left: 106px;
   width: 464px;
   height: 20px;
@@ -113,7 +117,7 @@
 }
 
 .addresstext {
-  top: 370px;
+  top: 430px;
   left: 106px;
   color: rgba(0, 0, 0, 0.9399999976158142);
   width: 205px;
@@ -129,7 +133,7 @@
   text-decoration: none;
 }
 .appartmentaddressinput {
-  top: 400px;
+  top: 460px;
   left: 106px;
   width: 464px;
   height: 20px;
@@ -141,114 +145,6 @@
 }
 
 .locationtext {
-  top: 440px;
-  left: 106px;
-  color: rgba(0, 0, 0, 0.9399999976158142);
-  width: 205px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Poppins;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.locationinput {
-  top: 470px;
-  left: 106px;
-  width: 464px;
-  height: 20px;
-  position: absolute;
-  border-color: rgba(0, 0, 0, 0.9399999976158142);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
-}
-
-.regiontext {
-  top: 570px;
-  left: 106px;
-  color: rgba(0, 0, 0, 0.9399999976158142);
-  width: 205px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Poppins;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.regioninput {
-  top: 600px;
-  left: 106px;
-  width: 464px;
-  height: 20px;
-  position: absolute;
-  border-color: rgba(0, 0, 0, 0.9399999976158142);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
-}
-
-.rentaltext {
-  top: 630px;
-  left: 106px;
-  color: rgba(0, 0, 0, 0.9399999976158142);
-  width: 205px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Poppins;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.rentalpriceinput {
-  top: 660px;
-  left: 106px;
-  width: 464px;
-  height: 20px;
-  position: absolute;
-  border-color: rgba(0, 0, 0, 0.9399999976158142);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
-}
-
-.phonenumberinput {
-  top: 730px;
-  left: 106px;
-  width: 464px;
-  height: 20px;
-  position: absolute;
-  border-color: rgba(0, 0, 0, 0.9399999976158142);
-  border-style: solid;
-  border-width: 0.5px;
-  border-radius: 6px;
-}
-.city {
-  top: 530px;
-  left: 106px;
-  width: 464px;
-  height: 20px;
-  position: absolute;
-  border-color: rgba(0, 0, 0, 0.9399999976158142);
-  border-style: solid;
-  border-width: 1px;
-
-  border-radius: 6px;
-}
-
-.governoratetext {
   top: 500px;
   left: 106px;
   color: rgba(0, 0, 0, 0.9399999976158142);
@@ -264,8 +160,116 @@
   font-stretch: normal;
   text-decoration: none;
 }
+.locationinput {
+  top: 530px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.regiontext {
+  top: 640px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.regioninput {
+  top: 670px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.rentaltext {
+  top: 710px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.rentalpriceinput {
+  top: 740px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.phonenumberinput {
+  top: 810px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 6px;
+}
+.city {
+  top: 600px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 1px;
+
+  border-radius: 6px;
+}
+
+.governoratetext {
+  top: 570px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
 .phonetext {
-  top: 700px;
+  top: 780px;
   left: 106px;
   color: rgba(0, 0, 0, 0.9399999976158142);
   width: 345px;
@@ -281,7 +285,7 @@
   text-decoration: none;
 }
 .ortext {
-  top: 770px;
+  top: 920px;
   left: 106px;
   color: rgba(0, 0, 0, 0.9399999976158142);
   width: 300px;
@@ -298,7 +302,7 @@
 }
 
 .sharedradio {
-  top: 800px;
+  top: 950px;
   left: 110px;
   width: 27px;
   height: 20px;
@@ -310,7 +314,7 @@
   cursor: pointer;
 }
 .sharedtext {
-  top: 800px;
+  top: 950px;
   left: 146px;
   color: rgba(0, 0, 0, 0.9399999976158142);
   height: auto;
@@ -325,7 +329,7 @@
   text-decoration: none;
 }
 .invidualradio {
-  top: 800px;
+  top: 950px;
   left: 400px;
   width: 27px;
   height: 20px;
@@ -337,7 +341,7 @@
   cursor: pointer;
 }
 .invidualtext {
-  top: 800px;
+  top: 950px;
   left: 436px;
   color: rgba(0, 0, 0, 0.9399999976158142);
   height: auto;
@@ -352,7 +356,7 @@
   text-decoration: none;
 }
 .donebutton {
-  top: 834px;
+  top: 1000px;
   left: 117px;
   width: 464px;
   height: 40px;
@@ -379,4 +383,66 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+}
+.no_of_tenants {
+  top: 850px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 345px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.no_of_tenantsinput {
+  top: 880px;
+  left: 106px;
+  width: 464px;
+  height: 20px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.9399999976158142);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 6px;
+}
+
+.main_image {
+  top: 280px;
+  left: 106px;
+  color: rgba(0, 0, 0, 0.9399999976158142);
+  width: 345px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.main_imagee {
+  top: 310px;
+  left: 106px;
+  width: 464px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  color: rgba(149, 157, 177, 1);
+}
+.main_ima {
+  top: 10px;
+  left: 106px;
+  width: 464px;
+  height: 30px;
+  position: absolute;
+  color: rgba(172, 233, 252, 0.055);
 }

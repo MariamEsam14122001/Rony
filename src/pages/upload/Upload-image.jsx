@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-
+import PropTypes from "prop-types";
 import styles from "./upload.module.css";
 import home from "../pictures/up.png";
 import Welcome from "../../componets/welcome/Welcome";
 import axios from "axios";
 
 const Uploadform = () => {
-  const ownerData = useSelector((state) => state.auth.userProfile); // Get owner data from Redux
-
   const cities = [
     "Alexandria",
     "Aswan",
@@ -48,11 +46,10 @@ const Uploadform = () => {
     shared_or_individual: "",
     city: "",
     no_of_tenants: "",
-    owner_id: ownerData.id, // Include owner's ID in the form data
   });
 
   const [selectedFiles, setSelectedFiles] = useState({
-    images: [], // Change to an array to store multiple images
+    images: null,
     main_image: null,
   });
 
@@ -68,7 +65,7 @@ const Uploadform = () => {
     const { name, files } = e.target;
     setSelectedFiles({
       ...selectedFiles,
-      [name]: [...selectedFiles[name], ...files], // Append new files to the existing array
+      [name]: files[0],
     });
   };
 
@@ -80,15 +77,14 @@ const Uploadform = () => {
       data.append(key, formData[key]);
     });
 
-    selectedFiles.images.forEach((file) => {
-      data.append("images", file); // Append each image file to the FormData
-    });
-
+    if (selectedFiles.images) {
+      data.append("images", selectedFiles.images);
+    }
     if (selectedFiles.main_image) {
       data.append("main_image", selectedFiles.main_image);
     }
 
-    const token = localStorage.getItem("authToken");
+    const token = sessionStorage.getItem("authToken");
 
     if (!token) {
       console.error("No token found");
@@ -114,6 +110,7 @@ const Uploadform = () => {
       }
     }
   };
+
   return (
     <>
       <Welcome image={home} />
@@ -122,6 +119,7 @@ const Uploadform = () => {
         <span className={styles["upload-your-image-text"]}>
           Upload Your Images
         </span>
+
         <span className={styles["specstext"]}>Apartment Description :</span>
         <input
           onChange={handleChange}
@@ -131,6 +129,7 @@ const Uploadform = () => {
           type="text"
           className={styles["appartmentspecsinput"]}
         />
+
         <span className={styles["addresstext"]}> Address :</span>
         <input
           onChange={handleChange}
@@ -140,6 +139,7 @@ const Uploadform = () => {
           type="text"
           className={styles["appartmentaddressinput"]}
         />
+
         <span className={styles["no_of_tenants"]}>No of Tenants :</span>
         <input
           onChange={handleChange}
@@ -149,6 +149,7 @@ const Uploadform = () => {
           type="text"
           className={styles["no_of_tenantsinput"]}
         />
+
         <span className={styles["main_image"]}>Main Image :</span>
         <div>
           <input
@@ -163,7 +164,8 @@ const Uploadform = () => {
               {selectedFiles.main_image.name}
             </p>
           )}
-        </div>{" "}
+        </div>
+
         <span className={styles["locationtext"]}>Location Link :</span>
         <input
           onChange={handleChange}
@@ -173,6 +175,7 @@ const Uploadform = () => {
           type="text"
           className={styles["locationinput"]}
         />
+
         <span className={styles["regiontext"]}>Region :</span>
         <input
           onChange={handleChange}
@@ -182,6 +185,7 @@ const Uploadform = () => {
           type="text"
           className={styles["regioninput"]}
         />
+
         <span className={styles["rentaltext"]}>Rental Price :</span>
         <input
           onChange={handleChange}
@@ -191,6 +195,7 @@ const Uploadform = () => {
           type="text"
           className={styles["rentalpriceinput"]}
         />
+
         <span className={styles["phonetext"]}>Facilities :</span>
         <input
           onChange={handleChange}
@@ -200,9 +205,11 @@ const Uploadform = () => {
           type="text"
           className={styles["phonenumberinput"]}
         />
+
         <span className={styles["ortext"]}>
           Shared Or Individual Apartment?
         </span>
+
         <input
           onChange={handleChange}
           value="shared"
@@ -221,6 +228,7 @@ const Uploadform = () => {
           className={styles["invidualradio"]}
         />
         <span className={styles["invidualtext"]}>Individual :</span>
+
         <span className={styles["governoratetext"]}> Governorate :</span>
         <div>
           <input
@@ -238,6 +246,7 @@ const Uploadform = () => {
             ))}
           </datalist>
         </div>
+
         <div className={styles["browse"]}>
           <div className={styles["browseimage"]}>
             <div>
@@ -246,25 +255,35 @@ const Uploadform = () => {
                 type="file"
                 name="images"
                 onChange={handleFileChange}
-                multiple // Allow multiple file selection
               />
-              {selectedFiles.images.map((file, index) => (
-                <p key={index} className={styles["teext"]}>
-                  Selected file: {file.name}
+              {selectedFiles.images && (
+                <p className={styles["teext"]}>
+                  Selected file: {selectedFiles.images.name}
                 </p>
-              ))}
+              )}
             </div>
             <span className={styles["text04"]}>
               Supports: PNG, JPG, JPEG, WEBP
             </span>
           </div>
         </div>
+
         <button type="submit" className={styles["donebutton"]}>
           <span className={styles["text12"]}>Done</span>
         </button>
       </form>
     </>
   );
+};
+
+Welcome.defaultProps = {
+  iMAGESrc: home,
+  iMAGEAlt: "IMAGE",
+};
+
+Welcome.propTypes = {
+  iMAGESrc: PropTypes.string,
+  iMAGEAlt: PropTypes.string,
 };
 
 export default Uploadform;
