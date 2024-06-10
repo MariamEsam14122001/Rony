@@ -43,10 +43,10 @@ function Login() {
       const isAdmin = email.endsWith("@example.com");
       const userType = isAdmin ? "admin" : response.data.userType;
 
-      // Store in localStorage and Redux
-      localStorage.setItem("authToken", token);
-      localStorage.setItem("userRole", userType);
-      localStorage.setItem("userProfile", JSON.stringify(user));
+      // Store in sessioStorage and Redux
+      sessionStorage.setItem("authToken", token);
+      sessionStorage.setItem("userRole", userType);
+      sessionStorage.setItem("userProfile", JSON.stringify(user));
       dispatch(setAuthToken(token));
       dispatch(setUserRole(userType));
       dispatch(setUserProfile(user));
