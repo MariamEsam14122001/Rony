@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import styles from "./upload.module.css";
 import home from "../pictures/up.png";
 import Welcome from "../../componets/welcome/Welcome";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Uploadform = () => {
+  const navigate = useNavigate();
+
   const cities = [
     "Alexandria",
     "Aswan",
@@ -49,7 +51,7 @@ const Uploadform = () => {
   });
 
   const [selectedFiles, setSelectedFiles] = useState({
-    images: null,
+    images: [],
     main_image: null,
   });
 
@@ -63,10 +65,17 @@ const Uploadform = () => {
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
-    setSelectedFiles({
-      ...selectedFiles,
-      [name]: files[0],
-    });
+    if (name === "images") {
+      setSelectedFiles({
+        ...selectedFiles,
+        images: Array.from(files),
+      });
+    } else {
+      setSelectedFiles({
+        ...selectedFiles,
+        [name]: files[0],
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -77,11 +86,16 @@ const Uploadform = () => {
       data.append(key, formData[key]);
     });
 
-    if (selectedFiles.images) {
-      data.append("images", selectedFiles.images);
-    }
+    selectedFiles.images.forEach((file, index) => {
+      data.append(`images`, file);
+    });
     if (selectedFiles.main_image) {
       data.append("main_image", selectedFiles.main_image);
+    }
+
+    // Log FormData contents
+    for (let pair of data.entries()) {
+      console.log(`${pair[0]}, ${pair[1]}`);
     }
 
     const token = sessionStorage.getItem("authToken");
@@ -103,6 +117,7 @@ const Uploadform = () => {
         }
       );
       console.log("Upload successful:", response.data);
+      navigate("/owner");
     } catch (error) {
       console.error("Upload failed:", error);
       if (error.response) {
@@ -254,11 +269,13 @@ const Uploadform = () => {
                 className={styles["text"]}
                 type="file"
                 name="images"
+                multiple
                 onChange={handleFileChange}
               />
-              {selectedFiles.images && (
+              {selectedFiles.images.length > 0 && (
                 <p className={styles["teext"]}>
-                  Selected file: {selectedFiles.images.name}
+                  Selected files:{" "}
+                  {selectedFiles.images.map((file) => file.name).join(", ")}
                 </p>
               )}
             </div>
@@ -274,16 +291,6 @@ const Uploadform = () => {
       </form>
     </>
   );
-};
-
-Welcome.defaultProps = {
-  iMAGESrc: home,
-  iMAGEAlt: "IMAGE",
-};
-
-Welcome.propTypes = {
-  iMAGESrc: PropTypes.string,
-  iMAGEAlt: PropTypes.string,
 };
 
 export default Uploadform;

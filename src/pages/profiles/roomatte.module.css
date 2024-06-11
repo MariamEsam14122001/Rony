@@ -1,18 +1,3 @@
-.photoo {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  position: absolute;
-  /* align-items: flex-start;*/
-  flex-shrink: 1;
-  left: 700px;
-  top: 50px;
-  background-color: rgba(172, 233, 252, 0.548);
-  border-color: rgba(172, 233, 252, 0.548);
-  border-style: solid;
-  border-radius: 100px;
-}
-
 .form {
   top: 250px;
   left: 450px;
@@ -38,7 +23,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -79,7 +64,7 @@
   font-style: Medium;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -96,7 +81,7 @@
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -113,7 +98,7 @@
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -153,10 +138,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 
 .genderinput {
@@ -165,10 +146,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .age {
   top: 410px;
@@ -181,7 +158,7 @@
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
@@ -193,10 +170,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .ageinput {
   top: 440px;
@@ -204,10 +177,6 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
 }
 .phoneinput {
   top: 600px;
@@ -215,8 +184,9 @@
   width: 464px;
   height: 40px;
   position: absolute;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
+}
+.photo {
+  position: absolute;
+  top: 180px;
+  left: 770px;
 }

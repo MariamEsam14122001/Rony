@@ -79,7 +79,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.password {
+.Phone {
   top: 298px;
   left: 138px;
   width: 119px;
@@ -89,7 +89,7 @@
   align-items: flex-start;
   flex-shrink: 1;
 }
-.password1 {
+.Phone1 {
   color: black;
   width: 119px;
   height: auto;
@@ -208,6 +208,14 @@
 }
 
 .passwordinput {
+  top: 328px;
+  left: 127px;
+  width: 464px;
+  height: 40px;
+  position: absolute;
+}
+
+.Phoneinput {
   top: 328px;
   left: 127px;
   width: 464px;

@@ -2,7 +2,7 @@
   top: 150px;
   left: 100px;
   width: 740px;
-  height: 859px;
+  height: 700px;
   display: flex;
   position: absolute;
   align-items: flex-start;
@@ -99,30 +99,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.password {
-  top: 298px;
-  left: 138px;
-  width: 119px;
-  height: 100px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.password1 {
-  color: black;
-  width: 119px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Medium;
-  text-align: left;
-  font-family: "Poppins";
-  font-weight: 800;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
+
 .status {
   top: 370px;
   left: 140px;
@@ -139,25 +116,9 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.city {
-  top: 601px;
-  left: 138px;
-  color: black;
-  width: 69px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Poppins;
-  font-weight: 800;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
 
 .phone {
-  top: 680px;
+  top: 298px;
   left: 138px;
   color: black;
   width: 69px;
@@ -173,7 +134,7 @@
   text-decoration: none;
 }
 .button {
-  top: 781px;
+  top: 620px;
   left: 127px;
   width: 200px;
   cursor: pointer;
@@ -202,16 +163,16 @@
   text-decoration: none;
 }
 .nameinput {
-  top: 167px;
-  left: 127px;
+  top: 30px;
+  left: 15px;
   width: 464px;
   height: 40px;
   position: absolute;
 }
 
 .emailinput {
-  top: 253px;
-  left: 127px;
+  top: 30px;
+  left: 15px;
   width: 464px;
   height: 40px;
   position: absolute;
@@ -239,29 +200,16 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.passwordinput {
-  top: 328px;
-  left: 127px;
-  width: 464px;
-  height: 40px;
-  position: absolute;
-}
-.cityinput {
-  top: 630px;
-  left: 127px;
-  width: 464px;
-  height: 40px;
-  position: absolute;
-}
+
 .ageinput {
-  top: 555px;
-  left: 127px;
+  top: 30px;
+  left: 20px;
   width: 464px;
   height: 40px;
   position: absolute;
 }
 .phoneinput {
-  top: 705px;
+  top: 328px;
   left: 127px;
   width: 464px;
   height: 40px;
