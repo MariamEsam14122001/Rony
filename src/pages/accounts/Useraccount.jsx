@@ -79,7 +79,7 @@ const Useform = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/register",
+        `http://localhost:8000/api/user/profile/{id}/update`,
         data,
         {
           headers: {

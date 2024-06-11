@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./owneraccount.module.css";
 import Photos from "../../componets/photo/Photo";
 import img from "../pictures/prof.png";
 import axios from "axios";
 
-const Ownform = (props) => {
+const Ownform = () => {
   const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => {
@@ -17,8 +17,14 @@ const Ownform = (props) => {
     emailinput: "",
     passwordinput: "",
     imageinput: null, // Change to null to handle files
-    setting: "",
   });
+
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    const id = sessionStorage.getItem("userId");
+    setUserId(id);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -38,6 +44,8 @@ const Ownform = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("Submitting form with id:", userId); // Log the id
+
     const formDataToSend = new FormData();
     formDataToSend.append("nameinput", formData.nameinput);
     formDataToSend.append("emailinput", formData.emailinput);
@@ -45,15 +53,17 @@ const Ownform = (props) => {
     if (formData.imageinput) {
       formDataToSend.append("imageinput", formData.imageinput);
     }
-    formDataToSend.append("setting", formData.setting);
+
+    const token = sessionStorage.getItem("authToken");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/register",
+      const response = await axios.put(
+        `http://localhost:8000/api/owner/profile/${userId}/update`,
         formDataToSend,
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -108,14 +118,8 @@ const Ownform = (props) => {
             className={styles["passwordinput"]}
           />
 
-          <button
-            name="setting"
-            id="setting"
-            type="submit"
-            value={formData.setting}
-            className={styles["button"]}
-          >
-            <span className={styles["change"]}>save changes</span>
+          <button id="setting" type="submit" className={styles["button"]}>
+            <span className={styles["change"]}>Save Changes</span>
           </button>
         </div>
         <div className={styles["upload-container"]}>
