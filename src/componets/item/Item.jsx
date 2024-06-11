@@ -11,6 +11,7 @@ function Item({
   main_image,
   description,
   shared_or_individual,
+  phone,
 }) {
   return (
     <>
@@ -32,7 +33,7 @@ function Item({
                 <span className={styles["text4"]}>{location}</span>
               </div>
               <span className={styles["text"]}>{shared_or_individual}</span>
-              <span className={styles["text"]}>0111111111</span>
+              <span className={styles["text"]}>{phone}</span>
             </div>
             <img src={main_image} alt={title} className={styles["image"]} />
           </div>
