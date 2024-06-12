@@ -6,7 +6,6 @@ import Footer from "../../componets/footer/Footer.jsx";
 //import RecommendedList from "../componets/RecommendedList.jsx";
 import styles from "./home.module.css";
 import Title from "../../componets/title/Title.jsx";
-//import accommodationsData from "./accommodations.json";
 import SearchBar from "../../componets/searchbar/SearchBar.jsx";
 import { /*Link,*/ useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -26,7 +25,7 @@ const Home = () => {
     try {
       const token = sessionStorage.getItem("authToken");
       const response = await axios.get(
-        "http://localhost:8000/api/accommodation/some",
+        `http://localhost:8000/api/recommendation_system_output`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

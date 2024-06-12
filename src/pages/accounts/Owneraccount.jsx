@@ -16,22 +16,47 @@ const Ownform = () => {
     nameinput: "",
     emailinput: "",
     passwordinput: "",
-    imageinput: null, // Change to null to handle files
+    imageinput: null,
+    setting: "",
   });
 
   const [userId, setUserId] = useState(null);
+  const [csrfToken, setCsrfToken] = useState("");  // State to store CSRF token
 
   useEffect(() => {
-    const id = sessionStorage.getItem("userId");
-    setUserId(id);
-  }, []);
+    const userProfile = sessionStorage.getItem("userProfile");
+    if (userProfile) {
+      const parsedProfile = JSON.parse(userProfile);
+      setUserId(parsedProfile.id);
+    } else {
+      console.error("User profile not found in sessionStorage");
+    }
+
+    // Fetch CSRF token when component mounts
+     // Fetch CSRF token when component mounts
+     fetchCsrfToken();
+
+     // Log CSRF token
+     console.log("CSRF Token:", csrfToken);
+   }, []);
+
+
+    const fetchCsrfToken = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/csrf-token");
+        setCsrfToken(response.data.token);
+      } catch (error) {
+        console.error("Error fetching CSRF token:", error);
+      }
+    };
+  
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "imageinput" && files.length > 0) {
       setFormData({
         ...formData,
-        [name]: files[0], // Set the file object
+        [name]: files[0],
       });
     } else {
       setFormData({
@@ -44,7 +69,14 @@ const Ownform = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Submitting form with id:", userId); // Log the id
+    if (!userId) {
+      console.error("User ID is null. Cannot submit form.");
+      return;
+    }
+
+    console.log("Submitting form with id:", userId);
+    
+    console.log("Submitting form with token:", csrfToken);
 
     const formDataToSend = new FormData();
     formDataToSend.append("nameinput", formData.nameinput);
@@ -53,17 +85,21 @@ const Ownform = () => {
     if (formData.imageinput) {
       formDataToSend.append("imageinput", formData.imageinput);
     }
-
+    formDataToSend.append("setting", formData.setting);
     const token = sessionStorage.getItem("authToken");
 
+console.log("Authentication Token:", token);
+    // const csrfToken = sessionStorage.getItem("csrfToken");
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/owner/profile/${userId}/update`,
+        `http://localhost:8000/owner/profile/${userId}/update`,
         formDataToSend,
         {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
+            // Include CSRF token if necessary
+            'X-CSRF-TOKEN': csrfToken,
           },
         }
       );
@@ -117,7 +153,6 @@ const Ownform = () => {
             type="password"
             className={styles["passwordinput"]}
           />
-
           <button id="setting" type="submit" className={styles["button"]}>
             <span className={styles["change"]}>Save Changes</span>
           </button>

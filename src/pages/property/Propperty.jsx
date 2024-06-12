@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./property.module.css";
 import img6 from "../pictures/location.png";
 import img7 from "../pictures/provide.png";
@@ -7,31 +7,48 @@ import VRList from "../../componets/vr/VRList.jsx";
 import ImagesList from "../../componets/vr/ImagesList.jsx";
 import img1 from "../pictures/line.png";
 import Header from "../../componets/header/Header.jsx";
-//import img from "./pictures/image.jpg";
 import WhatsAppButton from "../../componets/rentbutton/Rent.jsx";
 import StarRating from "../../componets/ratingandreview/RC.jsx";
-import { useLocation } from "react-router-dom";
-//import { ItemContext } from "../../Context/itemContext.jsx";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const PropertyDetails = (props) => {
-  //fetch data details
-  //first way
-  const location = useLocation();
-  const { item } = location.state;
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+  const [error, setError] = useState(null);
 
-  //second way
-  // const { selectedItem: item } = useContext(ItemContext);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/api/accommodation/${id}`
+        );
+        console.log("API Response:", response.data);
+        setItem(response.data);
+      } catch (error) {
+        console.error("Error fetching the property details:", error);
+        setError(error);
+      }
+    };
 
-  // if (!item) {
-  //   return <div>Loading...</div>;
-  // }
+    fetchData();
+  }, [id]);
 
-  //Panorama show
+  // Panorama show
   const [showPanorama, setShowPanorama] = useState(false);
-
   const togglePanorama = () => {
     setShowPanorama(!showPanorama);
   };
+
+  if (error) {
+    return <div>Error loading property details: {error.message}</div>;
+  }
+
+  if (!item) {
+    return <div>Loading...</div>;
+  }
+
+  const accommodation = item.accommodation;
 
   return (
     <>
@@ -40,12 +57,12 @@ const PropertyDetails = (props) => {
       <StarRating />
       <div className={styles["property-details"]}>
         <div className={styles["image1"]}>
-          {item && showPanorama ? (
+          {showPanorama ? (
             <div className={styles["panorama-image"]}>
-              <VRList images={item.images} />
+              <VRList images={accommodation.images} />
             </div>
           ) : (
-            item && <ImagesList images={item.images} />
+            <ImagesList images={accommodation.images} />
           )}
         </div>
         <button onClick={togglePanorama} className={styles["vrbutton"]} />
@@ -54,21 +71,21 @@ const PropertyDetails = (props) => {
         </span>
 
         <span className={styles["d3"]}>
-          <span>Bedrooms: 2</span>
+          <span>Governorate:{accommodation.governorate}</span>
         </span>
         <span className={styles["d4"]}>
-          <span>Available from: {item ? item.availability : "Loading..."}</span>
+          <span>Available: {accommodation.availability}</span>
         </span>
         <span className={styles["d5"]}>
-          <span>Property size: 98 sqft</span>
+          <span>Region: {accommodation.region}</span>
         </span>
         <span className={styles["d6"]}>
-          <span>Bathrooms: 1</span>
+          <span>Address: {accommodation.address}</span>
         </span>
 
         <div className={styles["rentdetails"]} />
         <span className={styles["r1"]}>
-          <span>{item ? `${item.price} EGP/Monthly` : "Loading..."}</span>
+          <span>{accommodation.price} EGP/Monthly</span>
         </span>
 
         <div className={styles["line2"]} />
@@ -79,7 +96,7 @@ const PropertyDetails = (props) => {
         </span>
 
         <div className={styles["rectangle12"]}>
-          <HeartButton id={item.id} />
+          <HeartButton id={accommodation.id} />
         </div>
 
         <img src={img1} alt="gege" className={styles["line"]} />
@@ -95,7 +112,9 @@ const PropertyDetails = (props) => {
             left: "150px",
           }}
         >
-          <p>{item ? item.description : "Loading..."}</p>
+          <p>{accommodation.description}</p>
+          <p>{accommodation.facilities}</p>
+          <p>{accommodation.shared_or_individual}</p>
         </div>
 
         <span className={styles["location"]}>
@@ -103,20 +122,16 @@ const PropertyDetails = (props) => {
         </span>
         <img src={img6} alt={props} className={styles["locationphoto"]} />
         <span className={styles["text15"]}>
-          <span>{item ? item.location : "Loading..."}</span>
+          <span>{accommodation.location_link}</span>
         </span>
-
         <span className={styles["provider"]}>
-          <span>Provider:</span>
+          <span>Roommate:</span>
         </span>
         <img src={img7} alt={props} className={styles["providerphoto"]} />
         <span className={styles["text22"]}>
           <span>
             <span>yasmin mohamed</span>
-            <br></br>
-            <span>Experts Home</span>
-            <br></br>
-            <span>(150 properties)</span>
+            <br />
           </span>
         </span>
 

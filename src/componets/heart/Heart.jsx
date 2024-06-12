@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 
 function HeartButton({ id }) {
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  console.log("Wishlist:", wishlist); // Debug log
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const token = useSelector((state) => state.auth.token); // Assuming you have a token in your Redux state
 
   const handleToggleLike = () => {
     if (!isAuthenticated) {
@@ -17,9 +19,9 @@ function HeartButton({ id }) {
     }
 
     if (wishlist.includes(id)) {
-      removeFromWishlist(id);
+      removeFromWishlist(id, token);
     } else {
-      addToWishlist(id);
+      addToWishlist(id, token);
     }
   };
 

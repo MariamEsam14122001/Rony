@@ -245,7 +245,7 @@
 
 .location {
   top: 1100px;
-  left: 800px;
+  left: 580px;
   color: rgb(9, 192, 248);
   height: auto;
   position: absolute;
@@ -291,7 +291,7 @@
 }
 .text15 {
   top: 1170px;
-  left: 950px;
+  left: 700px;
   color: rgb(34, 32, 32);
   height: auto;
   position: absolute;
@@ -321,7 +321,7 @@
 }
 .locationphoto {
   top: 1140px;
-  left: 800px;
+  left: 570px;
   width: 110px;
   height: 110px;
   position: absolute;

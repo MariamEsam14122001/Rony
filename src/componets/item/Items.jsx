@@ -20,8 +20,8 @@ const Items = ({ accommodations = [], likedItems = [], onToggleLike }) => {
               title={accommodation.title}
               price={accommodation.price}
               location={accommodation.location}
-              main_image={accommodation.main_image}
-              phone={accommodation.phone}
+              main_image={`http://localhost:8000/storage/${accommodation.main_image}`}
+              region={accommodation.region}
               shared_or_individual={accommodation.shared_or_individual}
               isLiked={likedItems.includes(accommodation.id)}
               onToggleLike={() => onToggleLike(accommodation.id)}
