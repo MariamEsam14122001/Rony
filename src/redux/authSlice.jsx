@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isAuthenticated: !!sessionStorage.getItem("authToken"),
-  token: sessionStorage.getItem("authToken"),
-  role: sessionStorage.getItem("userRole"),
+  isAuthenticated: Boolean(sessionStorage.getItem("authToken")),
+  token: sessionStorage.getItem("authToken") || null,
+  role: sessionStorage.getItem("userRole") || null,
   userProfile: JSON.parse(sessionStorage.getItem("userProfile")) || null,
 };
 
@@ -14,7 +14,7 @@ const authSlice = createSlice({
     setAuthToken: (state, action) => {
       const { payload } = action;
       state.token = payload;
-      state.isAuthenticated = true;
+      state.isAuthenticated = Boolean(payload);
       sessionStorage.setItem("authToken", payload);
     },
     setUserRole: (state, action) => {

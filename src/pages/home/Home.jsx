@@ -2,8 +2,7 @@ import { React, useState, useEffect } from "react";
 import Header from "../../componets/header/Header.jsx";
 import Head from "../../componets/header/Head.jsx";
 import Footer from "../../componets/footer/Footer.jsx";
-//import AccommodationList from ".../componets/AccommodationList.jsx";
-//import RecommendedList from "../componets/RecommendedList.jsx";
+
 import styles from "./home.module.css";
 import Title from "../../componets/title/Title.jsx";
 import SearchBar from "../../componets/searchbar/SearchBar.jsx";
@@ -25,7 +24,8 @@ const Home = () => {
     try {
       const token = sessionStorage.getItem("authToken");
       const response = await axios.get(
-        `http://localhost:8000/api/recommendation_system_output`,
+        //`http://localhost:8000/api/recommendation_system_output`,
+        `http://localhost:8000/api/accommodation/some`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -59,7 +59,11 @@ const Home = () => {
         <Title />
         {authToken && <Items accommodations={accommodations} />}
       </div>
-      <Footer />
+      <div>
+       
+          <Footer />
+        
+      </div>
     </div>
   );
 };
