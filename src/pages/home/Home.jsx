@@ -60,9 +60,7 @@ const Home = () => {
         {authToken && <Items accommodations={accommodations} />}
       </div>
       <div>
-       
-          <Footer />
-        
+        <Footer />
       </div>
     </div>
   );

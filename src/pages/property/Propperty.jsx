@@ -49,6 +49,14 @@ const PropertyDetails = (props) => {
   }
 
   const accommodation = item.accommodation;
+  const imagesArray = Array.isArray(accommodation.images)
+    ? accommodation.images
+    : accommodation.images.split(",");
+
+  // Construct the full image URLs
+  const fullImageUrls = imagesArray.map(
+    (image) => `http://localhost:8000/storage/${id}/${image}`
+  );
 
   return (
     <>
@@ -59,10 +67,10 @@ const PropertyDetails = (props) => {
         <div className={styles["image1"]}>
           {showPanorama ? (
             <div className={styles["panorama-image"]}>
-              <VRList images={accommodation.images} />
+              <VRList images={fullImageUrls} />
             </div>
           ) : (
-            <ImagesList images={accommodation.images} />
+            <ImagesList images={fullImageUrls} />
           )}
         </div>
         <button onClick={togglePanorama} className={styles["vrbutton"]} />
