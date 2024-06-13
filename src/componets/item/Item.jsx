@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./item.module.css";
 import loc from "../pictures/location.png";
 import HeartButton from "../heart/Heart";
+import { WishlistProvider } from "../../Context/WishlistContext";
 
 function Item({
   id,
@@ -19,7 +20,9 @@ function Item({
         <div className="col card ">
           <div className={styles["item"]}>
             <div className={styles["wishlist"]}>
-              <HeartButton id={id} />
+              <WishlistProvider>
+                <HeartButton id={id} />
+              </WishlistProvider>
             </div>
 
             <div className={styles["content"]}>

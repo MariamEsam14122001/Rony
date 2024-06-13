@@ -29,78 +29,11 @@ const SearchBar = ({ onSearch }) => {
 
   const cities = ["Alexandria", "Cairo", "Aswan"];
   const districtsByCity = {
-    Alexandria: [
-      "The first district of Al-Montaza",
-      "The second district of Al-Montazah",
-      "The Sharq district",
-      "the Wasat district",
-      "The Gharb district",
-      "El Gomrok district",
-      "the Amriya district",
-      " the second district of Al-Amriya",
-      "the Al-Ajmi district",
-    ],
+    Alexandria: ["Seyouf", "San Stefano", "Louran", "Sidi Bishr"],
 
-    Cairo: [
-      " Abbassia",
-      "Ain Shams",
-      "Al Rehab",
-      "Al-Wayli and al-Daher, Cairo",
-      "Azbakeya",
-      "Bab al-Louq",
-      "Boulaq",
-      " City of the Dead (Cairo)",
-      " Coptic Cairo",
-      "Downtown Cairo",
+    Cairo: ["Maadi", "Heliopolis", "Nasr City", "6th of October"],
 
-      " El Manial",
-      "El Marg",
-      "El Matareya, Cairo",
-      "El Qobbah",
-      " El Sahel",
-      " El Sakkakini",
-      " Ezbet El Nakhl",
-      "Faggala",
-      " Fifth Settlement",
-      " Fustat",
-
-      " Garden City, Cairo",
-      "Gezira (Cairo)",
-
-      " Heliopolis, Cairo",
-
-      "Islamic Cairo",
-
-      " Maadi",
-      "Madinat El-Amal",
-
-      "Old Cairo",
-
-      "Roda Island",
-
-      " Shubra (administrative region)",
-      "Shubra",
-      "Shubra El Kheima",
-
-      "Wagh El Birket",
-
-      "Zamalek",
-      "Zeitoun",
-      " Cairo",
-    ],
-
-    Aswan: [
-      "Abu Simbel",
-      "Aswan",
-      "Aswan 1",
-      "Aswan 2",
-      "Daraw",
-      "Edfu",
-      " Kom Ombo",
-      " New Aswan",
-      " New Tushka",
-      "Nasr",
-    ],
+    Aswan: ["Daraw", "Edfu", "Abu Simbel"],
   };
 
   return (

@@ -13,30 +13,64 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const authToken = useSelector((state) => state.auth.token);
-  const [accommodations, setAccommodations] = useState([]);
   const navigate = useNavigate();
 
+  //GPT
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    fetchAccommodations();
+    fetchData();
   }, []);
 
-  const fetchAccommodations = async () => {
+  const fetchData = async () => {
     try {
       const token = sessionStorage.getItem("authToken");
-      const response = await axios.get(
-        //`http://localhost:8000/api/recommendation_system_output`,
-        `http://localhost:8000/api/accommodation/some`,
+      const response = await fetch(
+        "http://localhost:8000/api/accommodation/some",
         {
+          method: "GET",
           headers: {
-            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Include the Authorization header
           },
         }
       );
-      setAccommodations(response.data.accommodations || []);
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const jsonData = await response.json();
+      console.log("Fetched data:", jsonData); // Add logging for debugging
+      setData(jsonData.accommodations || []); // Access the accommodations property
     } catch (error) {
-      console.error("Error fetching accommodations:", error);
+      console.error("Error fetching data:", error);
     }
   };
+
+  // const [accommodations, setAccommodations] = useState([]);
+
+  // useEffect(() => {
+  //   fetchAccommodations();
+  // }, []);
+
+  // const fetchAccommodations = async () => {
+  //   try {
+  //     const token = sessionStorage.getItem("authToken");
+  //     const response = await axios.get(
+  //       //`http://localhost:8000/api/recommendation_system_output`,
+  //       `http://localhost:8000/api/accommodation/some`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       }
+  //     );
+  //     setAccommodations(response.data.accommodations || []);
+  //   } catch (error) {
+  //     console.error("Error fetching accommodations:", error);
+  //   }
+  // };
 
   const handleSearch = async (params) => {
     try {
@@ -57,7 +91,7 @@ const Home = () => {
           <SearchBar onSearch={handleSearch} />
         </div>
         <Title />
-        {authToken && <Items accommodations={accommodations} />}
+        {authToken && <Items accommodations={data} />}
       </div>
       <div>
         <Footer />

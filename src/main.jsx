@@ -13,9 +13,9 @@ import { WishlistProvider } from "./Context/WishlistContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <WishlistProvider>
+    
         <RouterProvider router={router} />
-      </WishlistProvider>
+      
     </Provider>
   </React.StrictMode>
 );
